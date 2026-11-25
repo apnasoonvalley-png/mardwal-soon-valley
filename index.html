@@ -1,75 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075b3b">
+<meta name="description" content="مردوال سون ویلی، وادیٔ سون کی سیاحت، خبریں اور مقامی معلومات">
 <title>مردوال سون ویلی</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f7f2;color:#173b2b}
-header{background:#075b3b;color:white;text-align:center;padding:25px 12px}
-header h1{font-size:28px;margin:5px}
-header p{margin:8px}
-.hero{padding:65px 15px;text-align:center;color:white;
-background:linear-gradient(140deg,#075b3b,#159b72,#75ad55)}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f8f3;color:#173b2b;line-height:1.8}
+a{text-decoration:none;color:inherit}
+header{background:#075b3b;color:white;text-align:center;padding:22px 10px}
+header h1{font-size:30px;margin:0}
+header p{margin:5px}
+nav{background:white;padding:12px;text-align:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #0002}
+nav a{color:#075b3b;margin:0 8px;font-weight:bold;font-size:14px}
+.hero{padding:75px 15px;text-align:center;color:white;background:linear-gradient(135deg,#06452fe8,#159b72cc),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85') center/cover}
+.hero h2{font-size:38px;margin:0}
+.hero p{font-size:18px}
+.btn{display:inline-block;background:#f4c45e;color:#173b2b;padding:11px 22px;border-radius:10px;font-weight:bold;margin:8px}
+section{padding:35px 15px;max-width:1100px;margin:auto}
+h2{text-align:center;color:#075b3b;font-size:27px}
+.intro{text-align:center;color:#60766a}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.item{background:white;padding:22px 12px;text-align:center;border-radius:16px;box-shadow:0 4px 15px #0001}
+.item span{display:block;font-size:36px}
+.item h3{color:#075b3b;margin:8px 0}
+.item p{font-size:14px;color:#60766a;margin:0}
+.places{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.place{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px #0001}
+.place img{width:100%;height:165px;object-fit:cover}
+.place div{padding:12px}
+.place h3{color:#075b3b;margin:0}
+.place p{font-size:14px;color:#60766a;margin:4px 0}
+.highlight{background:#e7f4e9}
+.notice{background:white;padding:22px;border-right:5px solid #f4c45e;border-radius:12px}
+footer{background:#06452f;color:white;text-align:center;padding:30px 15px}
+footer h2{color:white}
+footer a{color:#f4c45e}
+@media(max-width:650px){
+.grid{grid-template-columns:repeat(2,1fr)}
+.places{grid-template-columns:1fr}
 .hero h2{font-size:30px}
-.hero p{font-size:17px;line-height:1.8}
-section{padding:20px 14px}
-h2{text-align:center;color:#075b3b}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.item{background:white;padding:23px 8px;text-align:center;
-border-radius:14px;box-shadow:0 3px 12px #0001;font-size:17px}
-.item span{display:block;font-size:30px;margin-bottom:10px}
-a{color:inherit;text-decoration:none}
-footer{background:#075b3b;color:white;text-align:center;padding:20px}
+nav a{display:inline-block;margin:4px}
+}
+@media(max-width:370px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header>
-<h1>مردوال سون ویلی</h1>
+<h1>🌄 مردوال سون ویلی</h1>
 <p>خوش آمدید وادیٔ سون کی خوبصورت دنیا میں</p>
 </header>
 
-<div class="hero">
+<nav>
+<a href="#home">ہوم</a>
+<a href="#services">سہولیات</a>
+<a href="#places">مقامات</a>
+<a href="#hotels">ہوٹلز</a>
+<a href="#market">خرید و فروخت</a>
+<a href="#contact">رابطہ</a>
+</nav>
+
+<div class="hero" id="home">
 <h2>خوش آمدید!</h2>
 <p>قدرتی حسن، خوبصورت پہاڑ، جھیلیں اور ہماری پیاری وادیٔ سون</p>
+<a class="btn" href="#places">وادیٔ سون دیکھیں</a>
+<a class="btn" href="#services">مزید معلومات</a>
 </div>
 
-<section>
-<h2>ہماری وادی کے بارے میں</h2>
+<section id="services">
+<h2>ہماری ویب سائٹ کی سہولیات</h2>
+<p class="intro">وادیٔ سون کی ہر اہم معلومات ایک ہی جگہ</p>
 <div class="grid">
-<a href="#places"><div class="item"><span>🏞️</span>سیاحتی مقامات</div></a>
-<a href="#hotels"><div class="item"><span>🏨</span>ہوٹل اور ریسٹورنٹس</div></a>
-<a href="#market"><div class="item"><span>🛍️</span>آن لائن خرید و فروخت</div></a>
-<a href="#live"><div class="item"><span>📺</span>لائیو ایونٹس</div></a>
-<a href="#news"><div class="item"><span>📰</span>تازہ خبریں</div></a>
-<a href="#contact"><div class="item"><span>📞</span>رابطہ کریں</div></a>
+<div class="item"><span>🏞️</span><h3>سیاحتی مقامات</h3><p>خوبصورت مقامات کی معلومات</p></div>
+<div class="item"><span>🏨</span><h3>ہوٹل اور ریسٹورنٹس</h3><p>رہائش اور کھانے کی سہولیات</p></div>
+<div class="item"><span>🛍️</span><h3>آن لائن مارکیٹ</h3><p>خرید و فروخت کا پلیٹ فارم</p></div>
+<div class="item"><span>📺</span><h3>لائیو ایونٹس</h3><p>علاقائی پروگرام براہ راست</p></div>
+<div class="item"><span>📰</span><h3>تازہ خبریں</h3><p>علاقے کی اہم خبریں</p></div>
+<div class="item"><span>📢</span><h3>عوامی اعلانات</h3><p>ضروری اطلاعات اور اعلانات</p></div>
 </div>
 </section>
 
-<section id="places"><h2>سیاحتی مقامات</h2>
-<p style="text-align:center">وادیٔ سون کے خوبصورت مقامات کی معلومات جلد شامل ہوں گی۔</p></section>
+<section class="highlight" id="places">
+<h2>وادیٔ سون کے خوبصورت مقامات</h2>
+<p class="intro">قدرت کے حسین نظارے، ہماری پہچان</p>
+<div class="places">
+<div class="place">
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=80" alt="قدرتی جھیل">
+<div><h3>اُچھالی جھیل</h3><p>وادیٔ سون کا مشہور قدرتی حسن</p></div>
+</div>
+<div class="place">
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=700&q=80" alt="سرسبز پہاڑ">
+<div><h3>کنہٹی گارڈن</h3><p>سرسبز ماحول اور خوبصورت مناظر</p></div>
+</div>
+<div class="place">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80" alt="پہاڑی منظر">
+<div><h3>وادیٔ سون</h3><p>قدرتی حسن سے مالا مال خوبصورت خطہ</p></div>
+</div>
+</div>
+</section>
 
-<section id="hotels"><h2>ہوٹل اور ریسٹورنٹس</h2>
-<p style="text-align:center">ہوٹلز اور کھانے پینے کی جگہوں کی تفصیلات یہاں ہوں گی۔</p></section>
+<section id="hotels">
+<h2>🏨 ہوٹل اور ریسٹورنٹس</h2>
+<div class="notice">وادیٔ سون کے ہوٹلوں، ریسٹورنٹس، رابطہ نمبرز اور بکنگ کی معلومات یہاں شامل کی جائیں گی۔</div>
+</section>
 
-<section id="market"><h2>خرید و فروخت</h2>
-<p style="text-align:center">اپنی چیزیں فروخت کرنے اور خریدنے کا پلیٹ فارم۔</p></section>
+<section class="highlight" id="market">
+<h2>🛍️ آن لائن خرید و فروخت</h2>
+<div class="notice">مقامی افراد اپنی اشیا کے اشتہارات جمع کروا سکیں گے۔ ہر اشتہار ایڈمن کی منظوری کے بعد ہی ویب سائٹ پر شائع ہوگا۔</div>
+</section>
 
-<section id="live"><h2>لائیو ایونٹس</h2>
-<p style="text-align:center">وادیٔ سون کے پروگرام براہ راست دیکھیں۔</p></section>
+<section id="live">
+<h2>📺 لائیو ایونٹس</h2>
+<div class="notice">وادیٔ سون کے پروگرام، تقریبات اور کھیلوں کے مقابلے براہ راست دیکھنے کی سہولت یہاں شامل ہوگی۔</div>
+</section>
 
-<section id="news"><h2>تازہ خبریں</h2>
-<p style="text-align:center">مردوال سون ویلی کی تازہ اپ ڈیٹس۔</p></section>
+<section class="highlight" id="news">
+<h2>📰 تازہ خبریں</h2>
+<div class="notice">مردوال سون ویلی کی تازہ خبریں اور اہم اعلانات یہاں شائع ہوں گے۔</div>
+</section>
 
-<section id="contact"><h2>رابطہ</h2>
-<p style="text-align:center">مردوال سون ویلی — آپ کی اپنی وادی، آپ کی اپنی ایپ</p></section>
+<section id="contact">
+<h2>رابطہ کریں</h2>
+<div class="notice" style="text-align:center">
+<p>مردوال سون ویلی — آپ کی اپنی وادی، آپ کی اپنی ویب سائٹ</p>
+<a class="btn" href="https://www.facebook.com/share/p/1Dp8PytHTV/" target="_blank" rel="noopener">ہمارا فیس بک پیج</a>
+</div>
+</section>
 
 <footer>
-<p>© مردوال سون ویلی</p>
-<p>تمام حقوق محفوظ ہیں</p>
+<h2>مردوال سون ویلی</h2>
+<p>وادیٔ سون کی خوبصورتی دنیا تک پہنچانے کا عزم</p>
+<p>© 2026 تمام حقوق محفوظ ہیں</p>
 </footer>
 
 </body>
-                                                                                 </html>
+</html>
