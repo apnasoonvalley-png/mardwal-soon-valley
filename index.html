@@ -1,240 +1,164 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#075b45">
-  <meta name="description" content="Mardwal Soon Valley - مردوال سون ویلی">
-  <title>مردوال سون ویلی | Mardwal Soon Valley</title>
-  <style>
-    :root{--green:#075b45;--green2:#0c8060;--gold:#f6c85f;--ink:#17352d;--muted:#64756f;--paper:#f5f8f5;--white:#fff}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
-    button,input{font:inherit}
-    button{cursor:pointer}
-    .top{background:linear-gradient(125deg,#064b3a,#0c8060);color:#fff;padding:15px 16px 18px;position:relative;overflow:hidden}
-    .top:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff22;border-radius:50%;left:-75px;top:-110px}
-    .brand{max-width:1050px;margin:auto;display:flex;align-items:center;gap:12px;position:relative;z-index:1}
-    .logo{width:62px;height:62px;flex:0 0 62px;border:3px solid var(--gold);border-radius:50%;background:#fff;color:var(--green);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:bold;line-height:1.25;overflow:hidden;box-shadow:0 3px 12px #0003}
-    .logo img{width:100%;height:100%;object-fit:cover}
-    .brand h1{font-size:clamp(19px,4vw,27px);margin:0 0 4px}
-    .brand p{margin:0;font-size:12px;color:#e1f4e9;letter-spacing:.4px}
-    .lang{margin-right:auto;background:#ffffff1c;border:1px solid #ffffff70;color:#fff;padding:8px 12px;border-radius:22px;font-size:12px}
-    .wrap{max-width:1050px;margin:auto;padding:15px}
-    .hero{min-height:215px;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(120deg,#174c3d,#7cae86);color:#fff;display:flex;align-items:flex-end;padding:22px;box-shadow:0 8px 24px #17352d18}
-    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#082d25d9,transparent 80%),url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85") center 48%/cover no-repeat;opacity:.92}
-    .heroText{position:relative;z-index:1;max-width:650px}
-    .hero h2{font-size:clamp(23px,5vw,34px);margin:0 0 8px;text-shadow:0 2px 8px #0008}
-    .hero p{margin:0;font-size:14px;line-height:1.8;color:#f3fff6}
-    .search{display:flex;gap:8px;margin:16px 0}
-    .search input{min-width:0;flex:1;border:1px solid #dce7df;background:#fff;border-radius:13px;padding:13px 15px;outline:none}
-    .search input:focus{border-color:var(--green2);box-shadow:0 0 0 3px #0c806018}
-    .search button,.primary{border:0;border-radius:13px;background:var(--green);color:#fff;padding:0 18px;font-weight:bold}
-    .sectionHead{display:flex;align-items:center;justify-content:space-between;margin:21px 2px 12px}
-    .sectionHead h3{margin:0;font-size:19px}
-    .sectionHead span{font-size:12px;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
-    .tile{border:1px solid #e6eee8;background:#fff;border-radius:17px;min-height:112px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px #17352d08;transition:transform .15s,box-shadow .15s;color:var(--ink)}
-    .tile:active{transform:scale(.97)}
-    .tile .emoji{width:45px;height:45px;border-radius:15px;margin:0 auto 9px;display:flex;align-items:center;justify-content:center;font-size:25px;background:var(--tint,#e7f5ec)}
-    .tile strong{display:block;font-size:13px;line-height:1.5}
-    .tile small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-    .feature{margin-top:17px;background:#fff;border:1px solid #e6eee8;border-radius:18px;padding:16px;display:flex;gap:13px;align-items:center}
-    .featureIcon{font-size:30px;background:#fff4d8;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex:0 0 54px}
-    .feature h3{margin:0 0 5px;font-size:16px}
-    .feature p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
-    .feature button{margin-right:auto;border:0;background:#e8f4ed;color:var(--green);border-radius:10px;padding:9px 12px;white-space:nowrap}
-    .notice{margin-top:15px;border-radius:15px;padding:13px 15px;background:#fff8e8;border:1px solid #f2e3bb;color:#72551b;font-size:12px;line-height:1.8}
-    footer{text-align:center;padding:24px 12px 90px;color:var(--muted);font-size:12px;line-height:1.9}
-    .bottom{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e5ece7;display:flex;justify-content:center;box-shadow:0 -4px 18px #17352d0b}
-    .bottomInner{width:100%;max-width:650px;display:grid;grid-template-columns:repeat(4,1fr)}
-    .navBtn{border:0;background:transparent;padding:10px 4px 8px;color:#66766f;font-size:10px}
-    .navBtn b{display:block;font-size:20px;margin-bottom:3px}
-    .navBtn.active{color:var(--green);font-weight:bold}
-    .modalBack{position:fixed;inset:0;background:#061d17a8;z-index:10;display:none;align-items:center;justify-content:center;padding:18px}
-    .modalBack.show{display:flex}
-    .modal{width:min(100%,440px);background:#fff;border-radius:20px;padding:20px;box-shadow:0 15px 50px #0004}
-    .modalTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .modal h3{margin:0;font-size:19px}
-    .close{border:0;background:#edf3ef;border-radius:50%;width:34px;height:34px;font-size:20px;color:#38564b}
-    .modal p{font-size:13px;line-height:1.9;color:#586b62}
-    .modal .primary{padding:11px 16px}
-    .empty{display:none;text-align:center;padding:22px;color:var(--muted);font-size:13px}
-    @media(max-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.tile{min-height:105px;padding:12px 5px}.tile strong{font-size:12px}.hero{min-height:205px;padding:18px}.feature{align-items:flex-start}.feature button{font-size:11px;padding:8px}.brand h1{font-size:19px}.logo{width:56px;height:56px;flex-basis:56px}}
-    @media(max-width:360px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lang{padding:7px 9px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075b48">
+<title>مردوال سون ویلی | Mardwal Soon Valley</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f7f4;color:#18352d}
+header{background:linear-gradient(135deg,#064e3b,#11966e);color:white;text-align:center;padding:17px 10px;border-radius:0 0 22px 22px}
+header h1{font-size:25px;margin:4px 0}
+header p{margin:5px;font-size:14px}
+.lang{background:#fff;color:#075b48;border:0;border-radius:20px;padding:8px 17px;font-weight:bold;margin-top:8px}
+.hero{margin:13px;border-radius:18px;min-height:175px;background:linear-gradient(#0004,#0006),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px}
+.hero h2{font-size:24px;text-shadow:1px 2px 5px #000}
+.welcome{text-align:center;padding:8px 12px}
+.welcome h2{color:#087653;margin:5px}
+.search{display:block;width:92%;margin:12px auto;padding:13px;border:1px solid #b7d5c8;border-radius:12px;font-size:16px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;padding:12px}
+.tile{border-radius:15px;min-height:105px;padding:13px 5px;text-align:center;color:white;text-decoration:none;box-shadow:0 3px 8px #0002;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font-weight:bold}
+.tile .ico{font-size:29px}
+.tile span:last-child{font-size:13px}
+.c1{background:#168b68}.c2{background:#2585c7}.c3{background:#e18b27}
+.c4{background:#8055b9}.c5{background:#d34e62}.c6{background:#159eaa}
+.c7{background:#507d35}.c8{background:#bd7135}.c9{background:#4169a8}
+.c10{background:#9b5991}.c11{background:#388c81}.c12{background:#687c39}
+.c13{background:#ca6650}.c14{background:#566b9b}.c15{background:#167c56}
+.notice{margin:12px;padding:14px;background:#e0f3e9;border-radius:13px;text-align:center;line-height:1.8;font-size:14px}
+footer{text-align:center;padding:22px 10px 90px;color:#557168;font-size:13px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:8px 3px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -3px 12px #0002;z-index:5}
+.bottom a{flex:1;text-align:center;text-decoration:none;font-size:11px;color:#31564a;font-weight:bold}
+.bottom b{display:block;font-size:22px;margin-bottom:3px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:10;align-items:center;justify-content:center;padding:20px}
+.modalbox{background:white;border-radius:18px;padding:22px;text-align:center;width:100%;max-width:350px;line-height:1.8}
+.modalbox h3{color:#087653}
+.close{background:#087653;color:white;border:0;padding:10px 25px;border-radius:10px}
+</style>
 </head>
 <body>
-  <header class="top">
-    <div class="brand">
-      <div class="logo" id="logoBox"><img src="logo.png" alt="Mardwal Soon Valley logo" onerror="this.remove();document.getElementById('logoBox').textContent='مردوال\\nسون ویلی'"></div>
-      <div>
-        <h1 id="brandUr">مردوال سون ویلی</h1>
-        <p>MARDWAL SOON VALLEY</p>
-      </div>
-      <button class="lang" id="langBtn" type="button">English</button>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="heroText">
-        <h2 id="heroTitle">خوش آمدید وادیٔ سون میں</h2>
-        <p id="heroDesc">قدرتی حسن، ثقافت، سیاحت اور اہلِ وادی کی آواز — سب ایک جگہ</p>
-      </div>
-    </section>
+<header>
+<h1 id="brand">مردوال سون ویلی</h1>
+<p>Mardwal Soon Valley</p>
+<p id="tagline">وادیٔ سون کی خوبصورتی، ثقافت اور معلومات</p>
+<button class="lang" onclick="toggleLang()">English / اردو</button>
+</header>
 
-    <div class="search">
-      <input id="searchInput" type="search" placeholder="اپنی مطلوبہ سروس تلاش کریں..." aria-label="Search">
-      <button id="searchBtn" type="button">تلاش</button>
-    </div>
+<section class="hero">
+<div>
+<h2 id="heroTitle">خوش آمدید وادیٔ سون میں</h2>
+<p id="heroText">قدرتی حسن، پہاڑوں اور جھیلوں کی حسین سرزمین</p>
+</div>
+</section>
 
-    <div class="sectionHead">
-      <h3 id="servicesTitle">ہماری سہولیات</h3>
-      <span id="serviceCount">15 سروسز</span>
-    </div>
+<section class="welcome">
+<h2 id="welcomeTitle">ہماری خوبصورت وادی</h2>
+<p id="welcomeText">وادیٔ سون کے سیاحتی مقامات، خبریں، کاروبار اور مقامی معلومات ایک ہی جگہ۔</p>
+</section>
 
-    <section class="grid" id="serviceGrid" aria-label="Services">
-      <button class="tile" data-key="tourism" style="--tint:#e1f3e8"><span class="emoji">🏞️</span><strong data-ur="سیاحت و تفریح" data-en="Tourism & Places">سیاحت و تفریح</strong><small data-ur="وادی کے خوبصورت مقامات" data-en="Explore the valley">وادی کے خوبصورت مقامات</small></button>
-      <button class="tile" data-key="hotels" style="--tint:#fff0d9"><span class="emoji">🏨</span><strong data-ur="ہوٹل و رہائش" data-en="Hotels & Stay">ہوٹل و رہائش</strong><small data-ur="رہائش کی معلومات" data-en="Stay information">رہائش کی معلومات</small></button>
-      <button class="tile" data-key="food" style="--tint:#ffe8e1"><span class="emoji">🍽️</span><strong data-ur="ریسٹورنٹس" data-en="Restaurants">ریسٹورنٹس</strong><small data-ur="کھانے پینے کے مقامات" data-en="Food places">کھانے پینے کے مقامات</small></button>
-      <button class="tile" data-key="market" style="--tint:#e7eaff"><span class="emoji">🛍️</span><strong data-ur="خرید و فروخت" data-en="Buy & Sell">خرید و فروخت</strong><small data-ur="مقامی آن لائن مارکیٹ" data-en="Local marketplace">مقامی آن لائن مارکیٹ</small></button>
-      <button class="tile" data-key="events" style="--tint:#fce8f1"><span class="emoji">🎉</span><strong data-ur="تقریبات و ایونٹس" data-en="Events">تقریبات و ایونٹس</strong><small data-ur="وادی کی سرگرمیاں" data-en="Valley activities">وادی کی سرگرمیاں</small></button>
-      <button class="tile" data-key="live" style="--tint:#ffe5e5"><span class="emoji">📺</span><strong data-ur="لائیو نشریات" data-en="Live Streaming">لائیو نشریات</strong><small data-ur="منظور شدہ لائیو پروگرام" data-en="Approved live programs">منظور شدہ لائیو پروگرام</small></button>
-      <button class="tile" data-key="news" style="--tint:#e4f2ff"><span class="emoji">📰</span><strong data-ur="تازہ خبریں" data-en="Latest News">تازہ خبریں</strong><small data-ur="وادی کی خبریں اور اپ ڈیٹس" data-en="Local news and updates">وادی کی خبریں اور اپ ڈیٹس</small></button>
-      <button class="tile" data-key="gallery" style="--tint:#f0e9ff"><span class="emoji">📸</span><strong data-ur="تصویری گیلری" data-en="Photo Gallery">تصویری گیلری</strong><small data-ur="وادی کے مناظر" data-en="Valley views">وادی کے مناظر</small></button>
-      <button class="tile" data-key="jobs" style="--tint:#e4f5f2"><span class="emoji">💼</span><strong data-ur="نوکریاں" data-en="Jobs">نوکریاں</strong><small data-ur="ملازمت کے مواقع" data-en="Career opportunities">ملازمت کے مواقع</small></button>
-      <button class="tile" data-key="transport" style="--tint:#fff1d8"><span class="emoji">🚌</span><strong data-ur="ٹرانسپورٹ" data-en="Transport">ٹرانسپورٹ</strong><small data-ur="سفر اور گاڑیوں کی معلومات" data-en="Travel information">سفر اور گاڑیوں کی معلومات</small></button>
-      <button class="tile" data-key="services" style="--tint:#e8efff"><span class="emoji">🧰</span><strong data-ur="مقامی خدمات" data-en="Local Services">مقامی خدمات</strong><small data-ur="دکانیں اور ہنرمند" data-en="Shops and professionals">دکانیں اور ہنرمند</small></button>
-      <button class="tile" data-key="weather" style="--tint:#e1f4ff"><span class="emoji">🌤️</span><strong data-ur="موسم" data-en="Weather">موسم</strong><small data-ur="موسمی معلومات" data-en="Weather information">موسمی معلومات</small></button>
-      <button class="tile" data-key="community" style="--tint:#f8e9dc"><span class="emoji">🤝</span><strong data-ur="کمیونٹی" data-en="Community">کمیونٹی</strong><small data-ur="اہلِ وادی کا رابطہ" data-en="Connect with locals">اہلِ وادی کا رابطہ</small></button>
-      <button class="tile" data-key="about" style="--tint:#e6f2e6"><span class="emoji">ℹ️</span><strong data-ur="ہمارے بارے میں" data-en="About Us">ہمارے بارے میں</strong><small data-ur="مردوال سون ویلی" data-en="Mardwal Soon Valley">مردوال سون ویلی</small></button>
-      <button class="tile" data-key="contact" style="--tint:#f4e8ff"><span class="emoji">📞</span><strong data-ur="رابطہ کریں" data-en="Contact Us">رابطہ کریں</strong><small data-ur="ہم سے رابطہ" data-en="Get in touch">ہم سے رابطہ</small></button>
-    </section>
-    <div class="empty" id="emptyMsg">کوئی سروس نہیں ملی</div>
+<input class="search" id="search" placeholder="اپنی مطلوبہ سہولت تلاش کریں..." oninput="filterTiles()">
 
-    <section class="feature">
-      <div class="featureIcon">🌿</div>
-      <div>
-        <h3 id="featureTitle">وادیٔ سون — ہمارا فخر</h3>
-        <p id="featureDesc">قدرتی مناظر، مقامی ثقافت اور کمیونٹی کی مثبت سرگرمیوں کو دنیا تک پہنچانے کا ایک پلیٹ فارم۔</p>
-      </div>
-      <button type="button" id="fbBtn">Facebook</button>
-    </section>
+<main class="grid" id="grid">
+<div class="tile c1" onclick="showInfo('tourism')"><span class="ico">🏞️</span><span data-ur="سیاحتی مقامات" data-en="Tourism">سیاحتی مقامات</span></div>
+<div class="tile c2" onclick="showInfo('hotels')"><span class="ico">🏨</span><span data-ur="ہوٹلز" data-en="Hotels">ہوٹلز</span></div>
+<div class="tile c3" onclick="showInfo('food')"><span class="ico">🍽️</span><span data-ur="ریسٹورنٹس" data-en="Restaurants">ریسٹورنٹس</span></div>
+<div class="tile c4" onclick="showInfo('market')"><span class="ico">🛍️</span><span data-ur="خرید و فروخت" data-en="Buy & Sell">خرید و فروخت</span></div>
+<div class="tile c5" onclick="showInfo('events')"><span class="ico">🎉</span><span data-ur="تقریبات" data-en="Events">تقریبات</span></div>
+<div class="tile c6" onclick="showInfo('live')"><span class="ico">📺</span><span data-ur="لائیو نشریات" data-en="Live Broadcast">لائیو نشریات</span></div>
+<div class="tile c7" onclick="showInfo('news')"><span class="ico">📰</span><span data-ur="تازہ خبریں" data-en="Latest News">تازہ خبریں</span></div>
+<div class="tile c8" onclick="showInfo('gallery')"><span class="ico">📸</span><span data-ur="تصاویر" data-en="Gallery">تصاویر</span></div>
+<div class="tile c9" onclick="showInfo('jobs')"><span class="ico">💼</span><span data-ur="ملازمتیں" data-en="Jobs">ملازمتیں</span></div>
+<div class="tile c10" onclick="showInfo('transport')"><span class="ico">🚗</span><span data-ur="ٹرانسپورٹ" data-en="Transport">ٹرانسپورٹ</span></div>
+<div class="tile c11" onclick="showInfo('services')"><span class="ico">🔧</span><span data-ur="مقامی خدمات" data-en="Local Services">مقامی خدمات</span></div>
+<div class="tile c12" onclick="showInfo('weather')"><span class="ico">🌤️</span><span data-ur="موسم" data-en="Weather">موسم</span></div>
+<div class="tile c13" onclick="showInfo('community')"><span class="ico">🤝</span><span data-ur="کمیونٹی" data-en="Community">کمیونٹی</span></div>
+<div class="tile c14" onclick="showInfo('about')"><span class="ico">ℹ️</span><span data-ur="ہمارے بارے میں" data-en="About Us">ہمارے بارے میں</span></div>
+<div class="tile c15" onclick="showInfo('contact')"><span class="ico">📞</span><span data-ur="رابطہ کریں" data-en="Contact Us">رابطہ کریں</span></div>
+</main>
 
-    <div class="notice" id="noticeText">اہم اطلاع: خرید و فروخت کی ہر پوسٹ انتظامیہ کی منظوری کے بعد شائع ہوگی۔ لائیو نشریات صرف ایڈمن یا منظور شدہ منتظمین شروع کر سکیں گے۔</div>
-  </main>
+<div class="notice" id="notice">
+<strong>اہم اطلاع</strong><br>
+خرید و فروخت کے اشتہارات انتظامیہ کی منظوری کے بعد شائع ہوں گے۔ لائیو نشریات صرف ایڈمن یا منظور شدہ منتظمین شروع کر سکیں گے۔
+</div>
 
-  <footer>
-    <strong>Mardwal Soon Valley | مردوال سون ویلی</strong><br>
-    <span id="footerText">وادیٔ سون کی خوبصورتی، خبریں اور کمیونٹی — ایک پلیٹ فارم پر</span><br>
-    © <span id="year"></span> Mardwal Soon Valley
-  </footer>
+<footer>
+مردوال سون ویلی<br>
+Mardwal Soon Valley<br>
+وادیٔ سون کی خدمت کے لیے ایک ڈیجیٹل پلیٹ فارم
+</footer>
 
-  <nav class="bottom">
-    <div class="bottomInner">
-      <button class="navBtn active" data-nav="home"><b>⌂</b><span data-ur="ہوم" data-en="Home">ہوم</span></button>
-      <button class="navBtn" data-nav="services"><b>▦</b><span data-ur="سہولیات" data-en="Services">سہولیات</span></button>
-      <button class="navBtn" data-nav="events"><b>◉</b><span data-ur="ایونٹس" data-en="Events">ایونٹس</span></button>
-      <button class="navBtn" data-nav="contact"><b>☏</b><span data-ur="رابطہ" data-en="Contact">رابطہ</span></button>
-    </div>
-  </nav>
+<nav class="bottom">
+<a href="#" onclick="window.scrollTo(0,0)"><b>🏠</b><span data-ur="ہوم" data-en="Home">ہوم</span></a>
+<a href="#grid"><b>🧭</b><span data-ur="سہولیات" data-en="Services">سہولیات</span></a>
+<a href="#" onclick="showInfo('events')"><b>📅</b><span data-ur="تقریبات" data-en="Events">تقریبات</span></a>
+<a href="#" onclick="showInfo('contact')"><b>☎️</b><span data-ur="رابطہ" data-en="Contact">رابطہ</span></a>
+</nav>
 
-  <div class="modalBack" id="modalBack" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal">
-      <div class="modalTop"><h3 id="modalTitle">سروس</h3><button class="close" id="closeModal" aria-label="Close">×</button></div>
-      <p id="modalDesc"></p>
-      <button class="primary" id="modalOk">ٹھیک ہے</button>
-    </div>
-  </div>
+<div class="modal" id="modal" onclick="if(event.target===this)closeInfo()">
+<div class="modalbox">
+<h3 id="modalTitle">معلومات</h3>
+<p id="modalText"></p>
+<button class="close" onclick="closeInfo()">بند کریں</button>
+</div>
+</div>
 
-  <script>
-    (function(){
-      "use strict";
-      var lang = "ur";
-      var translations = {
-        tourism:["سیاحت و تفریح","وادیٔ سون کے خوبصورت مقامات، جھیلوں، پہاڑوں اور تفریحی جگہوں کی معلومات یہاں شامل کی جائیں گی۔","Tourism & Places","Discover lakes, mountains and scenic places across Soon Valley."],
-        hotels:["ہوٹل و رہائش","سون ویلی کے ہوٹلوں، گیسٹ ہاؤسز اور رہائش کی معلومات یہاں دستیاب ہوں گی۔","Hotels & Stay","Hotel, guest house and accommodation information will appear here."],
-        food:["ریسٹورنٹس","مقامی ریسٹورنٹس، کھانوں، اوقات اور رابطہ معلومات کا سیکشن۔","Restaurants","Find local restaurants, food details and contact information."],
-        market:["خرید و فروخت","یہ مقامی آن لائن مارکیٹ ہے۔ صارفین کی ہر اشتہار/لسٹنگ ایڈمن کی منظوری کے بعد ہی شائع ہوگی۔","Buy & Sell","A local marketplace. Every listing must be approved by the admin before publication."],
-        events:["تقریبات و ایونٹس","وادیٔ سون کے پروگرام، کھیلوں کے مقابلے، ثقافتی تقریبات اور اعلانات۔","Events","Community programs, sports tournaments and cultural events."],
-        live:["لائیو نشریات","لائیو نشریات کا آغاز صرف ایڈمن یا ایڈمن سے منظور شدہ ایونٹ منتظمین کر سکیں گے۔","Live Streaming","Live broadcasts can be started by the admin or admin-approved event organizers."],
-        news:["تازہ خبریں","مردوال سون ویلی اور وادیٔ سون کی خبریں اور اہم اپ ڈیٹس۔","Latest News","News and important updates from Mardwal Soon Valley."],
-        gallery:["تصویری گیلری","وادیٔ سون کے خوبصورت مناظر، مقامی تقریبات اور یادگار تصاویر۔","Photo Gallery","Beautiful scenery, local events and memorable photographs."],
-        jobs:["نوکریاں","مقامی ملازمتوں اور روزگار کے مواقع کی معلومات۔","Jobs","Local vacancies and employment opportunities."],
-        transport:["ٹرانسپورٹ","سفر، گاڑیوں، پک اینڈ ڈراپ اور ٹرانسپورٹ رابطوں کی معلومات۔","Transport","Travel, vehicles and transport contact information."],
-        services:["مقامی خدمات","مقامی دکانوں، کاریگروں، ہنرمندوں اور ضروری خدمات کی ڈائریکٹری۔","Local Services","A directory of local shops, tradespeople and services."],
-        weather:["موسم","وادیٔ سون کے موسم کی تازہ معلومات یہاں دکھائی جا سکیں گی۔","Weather","Weather information for Soon Valley can be displayed here."],
-        community:["کمیونٹی","اہلِ وادی کے لیے رابطے، مثبت سرگرمیوں اور کمیونٹی معلومات کا پلیٹ فارم۔","Community","A place for local connections and community information."],
-        about:["ہمارے بارے میں","مردوال سون ویلی کا مقصد وادیٔ سون کی خوبصورتی، ثقافت اور مقامی آواز کو فروغ دینا ہے۔","About Us","Mardwal Soon Valley promotes the valley's beauty, culture and community voice."],
-        contact:["رابطہ کریں","رابطے کی تفصیلات اور انتظامیہ سے رابطے کا طریقہ یہاں شامل کیا جائے گا۔","Contact Us","Contact details and ways to reach the administration will be added here."]
-      };
-      var $ = function(id){return document.getElementById(id);};
-      $("year").textContent = new Date().getFullYear();
+<script>
+let english=false;
 
-      function showModal(key){
-        var t = translations[key] || translations.about;
-        $("modalTitle").textContent = lang === "ur" ? t[0] : t[2];
-        $("modalDesc").textContent = lang === "ur" ? t[1] : t[3];
-        $("modalOk").textContent = lang === "ur" ? "ٹھیک ہے" : "OK";
-        $("modalBack").classList.add("show");
-      }
-      function setLanguage(next){
-        lang = next;
-        document.documentElement.lang = lang === "ur" ? "ur" : "en";
-        document.documentElement.dir = lang === "ur" ? "rtl" : "ltr";
-        $("langBtn").textContent = lang === "ur" ? "English" : "اردو";
-        $("brandUr").textContent = lang === "ur" ? "مردوال سون ویلی" : "Mardwal Soon Valley";
-        $("heroTitle").textContent = lang === "ur" ? "خوش آمدید وادیٔ سون میں" : "Welcome to Soon Valley";
-        $("heroDesc").textContent = lang === "ur" ? "قدرتی حسن، ثقافت، سیاحت اور اہلِ وادی کی آواز — سب ایک جگہ" : "Nature, culture, tourism and the voice of the valley — all in one place";
-        $("servicesTitle").textContent = lang === "ur" ? "ہماری سہولیات" : "Our Services";
-        $("serviceCount").textContent = lang === "ur" ? "15 سروسز" : "15 services";
-        $("searchInput").placeholder = lang === "ur" ? "اپنی مطلوبہ سروس تلاش کریں..." : "Search for a service...";
-        $("searchBtn").textContent = lang === "ur" ? "تلاش" : "Search";
-        $("featureTitle").textContent = lang === "ur" ? "وادیٔ سون — ہمارا فخر" : "Soon Valley — Our Pride";
-        $("featureDesc").textContent = lang === "ur" ? "قدرتی مناظر، مقامی ثقافت اور کمیونٹی کی مثبت سرگرمیوں کو دنیا تک پہنچانے کا ایک پلیٹ فارم۔" : "A platform to share the valley's natural beauty, culture and positive community activities with the world.";
-        $("fbBtn").textContent = lang === "ur" ? "فیس بک پیج" : "Facebook Page";
-        $("noticeText").textContent = lang === "ur" ? "اہم اطلاع: خرید و فروخت کی ہر پوسٹ انتظامیہ کی منظوری کے بعد شائع ہوگی۔ لائیو نشریات صرف ایڈمن یا منظور شدہ منتظمین شروع کر سکیں گے۔" : "Notice: Marketplace listings will be published only after admin approval. Live broadcasts can be started only by the admin or approved organizers.";
-        $("footerText").textContent = lang === "ur" ? "وادیٔ سون کی خوبصورتی، خبریں اور کمیونٹی — ایک پلیٹ فارم پر" : "Soon Valley's beauty, news and community — all in one place";
-        document.querySelectorAll("[data-ur][data-en]").forEach(function(el){
-          el.textContent = lang === "ur" ? el.getAttribute("data-ur") : el.getAttribute("data-en");
-        });
-      }
-      function filterServices(){
-        var q = $("searchInput").value.trim().toLocaleLowerCase();
-        var visible = 0;
-        document.querySelectorAll(".tile").forEach(function(tile){
-          var text = tile.innerText.toLocaleLowerCase();
-          var key = tile.getAttribute("data-key");
-          var extra = translations[key] ? translations[key].join(" ").toLocaleLowerCase() : "";
-          var match = !q || text.indexOf(q) !== -1 || extra.indexOf(q) !== -1;
-          tile.style.display = match ? "" : "none";
-          if(match) visible++;
-        });
-        $("emptyMsg").style.display = visible ? "none" : "block";
-      }
-      $("langBtn").addEventListener("click",function(){setLanguage(lang === "ur" ? "en" : "ur");});
-      $("searchBtn").addEventListener("click",filterServices);
-      $("searchInput").addEventListener("input",filterServices);
-      document.querySelectorAll(".tile").forEach(function(tile){
-        tile.addEventListener("click",function(){showModal(tile.getAttribute("data-key"));});
-      });
-      $("closeModal").addEventListener("click",function(){$("modalBack").classList.remove("show");});
-      $("modalOk").addEventListener("click",function(){$("modalBack").classList.remove("show");});
-      $("modalBack").addEventListener("click",function(e){if(e.target === $("modalBack")) $("modalBack").classList.remove("show");});
-      $("fbBtn").addEventListener("click",function(){showModal("about");});
-      document.querySelectorAll(".navBtn").forEach(function(btn){
-        btn.addEventListener("click",function(){
-          document.querySelectorAll(".navBtn").forEach(function(b){b.classList.remove("active");});
-          btn.classList.add("active");
-          var key = btn.getAttribute("data-nav");
-          if(key === "home"){window.scrollTo({top:0,behavior:"smooth"});}
-          else if(key === "services"){document.getElementById("serviceGrid").scrollIntoView({behavior:"smooth"});}
-          else {showModal(key === "events" ? "events" : "contact");}
-        });
-      });
-      setLanguage("ur");
-    })();
-  </script>
+const info={
+tourism:["سیاحتی مقامات","وادیٔ سون کے خوبصورت پہاڑوں، جھیلوں، آبشاروں اور تاریخی مقامات کی معلومات یہاں فراہم کی جائیں گی."],
+hotels:["ہوٹلز","وادیٔ سون کے ہوٹلز، رہائش اور بکنگ کی معلومات یہاں دستیاب ہوں گی."],
+food:["ریسٹورنٹس","مقامی کھانوں، ریسٹورنٹس اور کھانے پینے کی جگہوں کی معلومات."],
+market:["خرید و فروخت","اپنی اشیا کی خرید و فروخت کے اشتہارات جمع کروائیں۔ ہر اشتہار ایڈمن کی منظوری کے بعد شائع ہوگا."],
+events:["تقریبات","وادیٔ سون کی تقریبات، میلوں اور اہم پروگراموں کی معلومات."],
+live:["لائیو نشریات","ایڈمن اور منظور شدہ منتظمین کی لائیو نشریات یہاں دیکھی جا سکیں گی."],
+news:["تازہ خبریں","وادیٔ سون کی مقامی اور اہم خبریں."],
+gallery:["تصاویر","وادیٔ سون کے خوبصورت مناظر اور یادگار تصاویر."],
+jobs:["ملازمتیں","مقامی ملازمتوں اور روزگار کے مواقع کی معلومات."],
+transport:["ٹرانسپورٹ","سفر اور ٹرانسپورٹ کی سہولیات کی معلومات."],
+services:["مقامی خدمات","مقامی کاروبار، کاریگروں اور خدمات فراہم کرنے والوں کی معلومات."],
+weather:["موسم","وادیٔ سون کے موسم سے متعلق معلومات."],
+community:["کمیونٹی","علاقے کے لوگوں کے لیے رابطے اور باہمی تعاون کا پلیٹ فارم."],
+about:["ہمارے بارے میں","مردوال سون ویلی وادیٔ سون کی معلومات اور تشہیر کے لیے ایک ڈیجیٹل پلیٹ فارم ہے."],
+contact:["رابطہ کریں","رابطے کی تفصیلات جلد شامل کی جائیں گی."]
+};
+
+function showInfo(key){
+let item=info[key];
+if(!item)return;
+document.getElementById("modalTitle").textContent=item[0];
+document.getElementById("modalText").textContent=item[1];
+document.getElementById("modal").style.display="flex";
+}
+function closeInfo(){
+document.getElementById("modal").style.display="none";
+}
+function filterTiles(){
+let q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".tile").forEach(tile=>{
+tile.style.display=tile.innerText.toLowerCase().includes(q)?"flex":"none";
+});
+}
+function toggleLang(){
+english=!english;
+document.documentElement.lang=english?"en":"ur";
+document.documentElement.dir=english?"ltr":"rtl";
+document.getElementById("brand").textContent=english?"Mardwal Soon Valley":"مردوال سون ویلی";
+document.getElementById("tagline").textContent=english?"Beauty, culture and information of Soon Valley":"وادیٔ سون کی خوبصورتی، ثقافت اور معلومات";
+document.getElementById("heroTitle").textContent=english?"Welcome to Soon Valley":"خوش آمدید وادیٔ سون میں";
+document.getElementById("heroText").textContent=english?"A beautiful land of mountains and lakes":"قدرتی حسن، پہاڑوں اور جھیلوں کی حسین سرزمین";
+document.getElementById("welcomeTitle").textContent=english?"Our Beautiful Valley":"ہماری خوبصورت وادی";
+document.getElementById("welcomeText").textContent=english?"Tourism, news, business and local information in one place.":"وادیٔ سون کے سیاحتی مقامات، خبریں، کاروبار اور مقامی معلومات ایک ہی جگہ۔";
+document.getElementById("search").placeholder=english?"Search for a service...":"اپنی مطلوبہ سہولت تلاش کریں...";
+document.getElementById("notice").innerHTML=english?"<strong>Important Notice</strong><br>Marketplace advertisements will be published after admin approval. Live broadcasts can be started by the admin or approved organizers.":"<strong>اہم اطلاع</strong><br>خرید و فروخت کے اشتہارات انتظامیہ کی منظوری کے بعد شائع ہوں گے۔ لائیو نشریات صرف ایڈمن یا منظور شدہ منتظمین شروع کر سکیں گے۔";
+document.querySelectorAll("[data-ur]").forEach(el=>{
+el.textContent=english?el.dataset.en:el.dataset.ur;
+});
+document.querySelector(".close").textContent=english?"Close":"بند کریں";
+}
+</script>
 </body>
 </html>
