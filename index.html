@@ -5,138 +5,257 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#075b3b">
-<meta name="description" content="مردوال سون ویلی، وادیٔ سون کی سیاحت، خبریں اور مقامی معلومات">
-<title>مردوال سون ویلی</title>
+<title>مردوال سون ویلی | Mardwal Soon Valley</title>
+
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f8f3;color:#173b2b;line-height:1.8}
-a{text-decoration:none;color:inherit}
-header{background:#075b3b;color:white;text-align:center;padding:22px 10px}
-header h1{font-size:30px;margin:0}
-header p{margin:5px}
-nav{background:white;padding:12px;text-align:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #0002}
-nav a{color:#075b3b;margin:0 8px;font-weight:bold;font-size:14px}
-.hero{padding:75px 15px;text-align:center;color:white;background:linear-gradient(135deg,#06452fe8,#159b72cc),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85') center/cover}
-.hero h2{font-size:38px;margin:0}
-.hero p{font-size:18px}
-.btn{display:inline-block;background:#f4c45e;color:#173b2b;padding:11px 22px;border-radius:10px;font-weight:bold;margin:8px}
-section{padding:35px 15px;max-width:1100px;margin:auto}
-h2{text-align:center;color:#075b3b;font-size:27px}
-.intro{text-align:center;color:#60766a}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.item{background:white;padding:22px 12px;text-align:center;border-radius:16px;box-shadow:0 4px 15px #0001}
-.item span{display:block;font-size:36px}
-.item h3{color:#075b3b;margin:8px 0}
-.item p{font-size:14px;color:#60766a;margin:0}
-.places{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.place{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px #0001}
-.place img{width:100%;height:165px;object-fit:cover}
-.place div{padding:12px}
-.place h3{color:#075b3b;margin:0}
-.place p{font-size:14px;color:#60766a;margin:4px 0}
-.highlight{background:#e7f4e9}
-.notice{background:white;padding:22px;border-right:5px solid #f4c45e;border-radius:12px}
-footer{background:#06452f;color:white;text-align:center;padding:30px 15px}
-footer h2{color:white}
-footer a{color:#f4c45e}
-@media(max-width:650px){
-.grid{grid-template-columns:repeat(2,1fr)}
-.places{grid-template-columns:1fr}
-.hero h2{font-size:30px}
-nav a{display:inline-block;margin:4px}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f3f7f2;
+ color:#183b2c;
 }
-@media(max-width:370px){.grid{grid-template-columns:1fr}}
+header{
+ background:#075b3b;
+ color:white;
+ padding:16px;
+ text-align:center;
+}
+header h1{margin:5px;font-size:27px}
+header p{margin:7px}
+.lang{
+ background:#f4c542;
+ color:#183b2c;
+ border:0;
+ padding:10px 18px;
+ border-radius:20px;
+ font-weight:bold;
+}
+nav{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ background:#06472e;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ padding:13px 12px;
+ font-size:14px;
+}
+.hero{
+ min-height:430px;
+ background:
+ linear-gradient(#0005,#0008),
+ url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e')
+ center/cover;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ color:white;
+ padding:25px;
+}
+.hero h2{font-size:34px}
+.hero p{font-size:18px}
+.btn{
+ display:inline-block;
+ background:#e8b832;
+ color:#173b2b;
+ padding:12px 22px;
+ border-radius:25px;
+ text-decoration:none;
+ font-weight:bold;
+ margin:6px;
+}
+section{padding:30px 16px}
+.heading{
+ text-align:center;
+ color:#075b3b;
+ font-size:25px;
+ margin-bottom:22px;
+}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:18px;
+ max-width:1100px;
+ margin:auto;
+}
+.card{
+ background:white;
+ border-radius:15px;
+ overflow:hidden;
+ box-shadow:0 4px 15px #0001;
+}
+.card img{
+ width:100%;
+ height:175px;
+ object-fit:cover;
+}
+.card-content{padding:16px}
+.card h3{color:#075b3b}
+.card p{line-height:1.8}
+.info{
+ background:#075b3b;
+ color:white;
+ text-align:center;
+ padding:30px 15px;
+}
+.info h2{font-size:25px}
+footer{
+ background:#043522;
+ color:white;
+ text-align:center;
+ padding:22px;
+ line-height:2;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>🌄 مردوال سون ویلی</h1>
-<p>خوش آمدید وادیٔ سون کی خوبصورت دنیا میں</p>
+<h1>Mardwal Soon Valley</h1>
+<p>مردوال سون ویلی</p>
+<p data-ur="وادیٔ سون کی خوبصورتی، ثقافت اور خبریں"
+data-en="Beauty, Culture and News of Soon Valley">
+وادیٔ سون کی خوبصورتی، ثقافت اور خبریں</p>
+<button class="lang" onclick="changeLang()">English</button>
 </header>
 
 <nav>
-<a href="#home">ہوم</a>
-<a href="#services">سہولیات</a>
-<a href="#places">مقامات</a>
-<a href="#hotels">ہوٹلز</a>
-<a href="#market">خرید و فروخت</a>
-<a href="#contact">رابطہ</a>
+<a href="#home" data-ur="ہوم" data-en="Home">ہوم</a>
+<a href="#places" data-ur="سیاحتی مقامات" data-en="Tourism">سیاحتی مقامات</a>
+<a href="#hotels" data-ur="ہوٹلز" data-en="Hotels">ہوٹلز</a>
+<a href="#market" data-ur="خرید و فروخت" data-en="Marketplace">خرید و فروخت</a>
+<a href="#live" data-ur="لائیو" data-en="Live">لائیو</a>
 </nav>
 
 <div class="hero" id="home">
-<h2>خوش آمدید!</h2>
-<p>قدرتی حسن، خوبصورت پہاڑ، جھیلیں اور ہماری پیاری وادیٔ سون</p>
-<a class="btn" href="#places">وادیٔ سون دیکھیں</a>
-<a class="btn" href="#services">مزید معلومات</a>
+<div>
+<h2 data-ur="خوش آمدید مردوال سون ویلی"
+data-en="Welcome to Mardwal Soon Valley">
+خوش آمدید مردوال سون ویلی
+</h2>
+<p data-ur="قدرت کے حسین مناظر، ہماری پہچان"
+data-en="Beautiful Nature, Our Identity">
+قدرت کے حسین مناظر، ہماری پہچان
+</p>
+<a href="#places" class="btn"
+data-ur="وادیٔ سون دیکھیں" data-en="Explore Soon Valley">
+وادیٔ سون دیکھیں</a>
+</div>
 </div>
 
-<section id="services">
-<h2>ہماری ویب سائٹ کی سہولیات</h2>
-<p class="intro">وادیٔ سون کی ہر اہم معلومات ایک ہی جگہ</p>
-<div class="grid">
-<div class="item"><span>🏞️</span><h3>سیاحتی مقامات</h3><p>خوبصورت مقامات کی معلومات</p></div>
-<div class="item"><span>🏨</span><h3>ہوٹل اور ریسٹورنٹس</h3><p>رہائش اور کھانے کی سہولیات</p></div>
-<div class="item"><span>🛍️</span><h3>آن لائن مارکیٹ</h3><p>خرید و فروخت کا پلیٹ فارم</p></div>
-<div class="item"><span>📺</span><h3>لائیو ایونٹس</h3><p>علاقائی پروگرام براہ راست</p></div>
-<div class="item"><span>📰</span><h3>تازہ خبریں</h3><p>علاقے کی اہم خبریں</p></div>
-<div class="item"><span>📢</span><h3>عوامی اعلانات</h3><p>ضروری اطلاعات اور اعلانات</p></div>
+<section id="places">
+<h2 class="heading" data-ur="وادیٔ سون کے خوبصورت مقامات"
+data-en="Beautiful Places of Soon Valley">
+وادیٔ سون کے خوبصورت مقامات</h2>
+
+<div class="cards">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
+<div class="card-content">
+<h3 data-ur="اوچھالی جھیل" data-en="Uchhali Lake">اوچھالی جھیل</h3>
+<p data-ur="وادیٔ سون کا ایک حسین قدرتی مقام۔"
+data-en="A beautiful natural destination of Soon Valley.">
+وادیٔ سون کا ایک حسین قدرتی مقام۔</p>
+</div></div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<div class="card-content">
+<h3 data-ur="سکیسر" data-en="Sakesar">سکیسر</h3>
+<p data-ur="پہاڑوں اور قدرتی مناظر کی خوبصورت دنیا۔"
+data-en="A beautiful world of mountains and nature.">
+پہاڑوں اور قدرتی مناظر کی خوبصورت دنیا۔</p>
+</div></div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027">
+<div class="card-content">
+<h3 data-ur="وادیٔ سون" data-en="Soon Valley">وادیٔ سون</h3>
+<p data-ur="قدرتی حسن اور ثقافت سے مالا مال علاقہ۔"
+data-en="A region rich in natural beauty and culture.">
+قدرتی حسن اور ثقافت سے مالا مال علاقہ۔</p>
+</div></div>
 </div>
 </section>
 
-<section class="highlight" id="places">
-<h2>وادیٔ سون کے خوبصورت مقامات</h2>
-<p class="intro">قدرت کے حسین نظارے، ہماری پہچان</p>
-<div class="places">
-<div class="place">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=80" alt="قدرتی جھیل">
-<div><h3>اُوچھالی جھیل</h3><p>وادیٔ سون کا مشہور قدرتی حسن</p></div>
-</div>
-<div class="place">
-<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=700&q=80" alt="سرسبز پہاڑ">
-<div><h3>کنہٹی گارڈن</h3><p>سرسبز ماحول اور خوبصورت مناظر</p></div>
-</div>
-<div class="place">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80" alt="پہاڑی منظر">
-<div><h3>وادیٔ سون</h3><p>قدرتی حسن سے مالا مال خوبصورت خطہ</p></div>
-</div>
+<section id="hotels" style="background:#e5efe6">
+<h2 class="heading" data-ur="ہوٹلز اور ریسٹورنٹس"
+data-en="Hotels & Restaurants">
+ہوٹلز اور ریسٹورنٹس</h2>
+<div class="cards">
+<div class="card">
+<div class="card-content">
+<h3 data-ur="ہوٹل ڈائریکٹری" data-en="Hotel Directory">ہوٹل ڈائریکٹری</h3>
+<p data-ur="وادیٔ سون میں رہائش کے لیے ہوٹلز کی معلومات۔"
+data-en="Find accommodation in Soon Valley.">
+وادیٔ سون میں رہائش کے لیے ہوٹلز کی معلومات۔</p>
+</div></div>
+<div class="card">
+<div class="card-content">
+<h3 data-ur="ریسٹورنٹس" data-en="Restaurants">ریسٹورنٹس</h3>
+<p data-ur="کھانے پینے کی بہترین جگہوں کی معلومات۔"
+data-en="Discover places to eat and enjoy.">
+کھانے پینے کی بہترین جگہوں کی معلومات۔</p>
+</div></div>
 </div>
 </section>
 
-<section id="hotels">
-<h2>🏨 ہوٹل اور ریسٹورنٹس</h2>
-<div class="notice">وادیٔ سون کے ہوٹلوں، ریسٹورنٹس، رابطہ نمبرز اور بکنگ کی معلومات یہاں شامل کی جائیں گی۔</div>
-</section>
-
-<section class="highlight" id="market">
-<h2>🛍️ آن لائن خرید و فروخت</h2>
-<div class="notice">مقامی افراد اپنی اشیا کے اشتہارات جمع کروا سکیں گے۔ ہر اشتہار ایڈمن کی منظوری کے بعد ہی ویب سائٹ پر شائع ہوگا۔</div>
+<section id="market">
+<h2 class="heading" data-ur="آن لائن خرید و فروخت"
+data-en="Online Marketplace">آن لائن خرید و فروخت</h2>
+<div class="info">
+<h2 data-ur="اپنی چیز فروخت کریں"
+data-en="Sell Your Products">اپنی چیز فروخت کریں</h2>
+<p data-ur="اپنی اشیاء کی تفصیل بھیجیں۔ ایڈمن کی منظوری کے بعد اشتہار شائع ہوگا۔"
+data-en="Submit your listing. It will be published after admin approval.">
+اپنی اشیاء کی تفصیل بھیجیں۔ ایڈمن کی منظوری کے بعد اشتہار شائع ہوگا۔
+</p>
+</div>
 </section>
 
 <section id="live">
-<h2>📺 لائیو ایونٹس</h2>
-<div class="notice">وادیٔ سون کے پروگرام، تقریبات اور کھیلوں کے مقابلے براہ راست دیکھنے کی سہولت یہاں شامل ہوگی۔</div>
-</section>
-
-<section class="highlight" id="news">
-<h2>📰 تازہ خبریں</h2>
-<div class="notice">مردوال سون ویلی کی تازہ خبریں اور اہم اعلانات یہاں شائع ہوں گے۔</div>
-</section>
-
-<section id="contact">
-<h2>رابطہ کریں</h2>
-<div class="notice" style="text-align:center">
-<p>مردوال سون ویلی — آپ کی اپنی وادی، آپ کی اپنی ویب سائٹ</p>
-<a class="btn" href="https://www.facebook.com/share/p/1Dp8PytHTV/" target="_blank" rel="noopener">ہمارا فیس بک پیج</a>
+<h2 class="heading" data-ur="لائیو تقریبات اور نشریات"
+data-en="Live Events & Broadcasts">
+لائیو تقریبات اور نشریات</h2>
+<div class="info">
+<h2 data-ur="وادیٔ سون کی تقریبات"
+data-en="Soon Valley Events">وادیٔ سون کی تقریبات</h2>
+<p data-ur="تقریبات اور خصوصی پروگراموں کی لائیو نشریات یہاں دیکھی جا سکیں گی۔"
+data-en="Watch live broadcasts of special events and programs here.">
+تقریبات اور خصوصی پروگراموں کی لائیو نشریات یہاں دیکھی جا سکیں گی۔
+</p>
 </div>
 </section>
 
 <footer>
-<h2>مردوال سون ویلی</h2>
-<p>وادیٔ سون کی خوبصورتی دنیا تک پہنچانے کا عزم</p>
-<p>© 2026 تمام حقوق محفوظ ہیں</p>
+<h3>مردوال سون ویلی</h3>
+<p data-ur="وادیٔ سون کی اپنی ویب سائٹ"
+data-en="Your Own Soon Valley Website">
+وادیٔ سون کی اپنی ویب سائٹ</p>
+<p>© Mardwal Soon Valley</p>
 </footer>
+
+<script>
+let english=false;
+
+function changeLang(){
+ english=!english;
+ document.documentElement.lang=english?"en":"ur";
+ document.documentElement.dir=english?"ltr":"rtl";
+
+ document.querySelectorAll("[data-ur]").forEach(el=>{
+ el.textContent=english?el.dataset.en:el.dataset.ur;
+ });
+
+ document.querySelector(".lang").textContent=
+ english?"اردو":"English";
+}
+</script>
 
 </body>
 </html>
