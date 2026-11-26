@@ -1,458 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#064b9b">
-<meta name="description" content="Mardwal Soon Valley - مردوال سون ویلی">
+<meta name="theme-color" content="#075b3b">
 <title>مردوال سون ویلی | Mardwal Soon Valley</title>
-<link rel="manifest" href="/manifest.json">
 
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#eef4fa;
- color:#17324d;
- padding-bottom:65px;
+margin:0;
+font-family:Arial,sans-serif;
+background:#eef5ee;
+color:#173c2b;
 }
-.hero{
- min-height:390px;
- background:linear-gradient(#00315c85,#001b3385),
- url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200') center/cover;
- color:white;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- text-align:center;
- padding:20px 12px;
-}
-.brand{
- display:flex;
- align-items:center;
- justify-content:center;
- gap:12px;
- flex-wrap:wrap;
+.header{
+background:linear-gradient(135deg,#064c34,#13865b);
+color:white;
+text-align:center;
+padding:13px 10px;
+border-radius:0 0 20px 20px;
 }
 .logo{
- width:75px;
- height:75px;
- border:4px solid #ffd43b;
- border-radius:50%;
- background:#08743b;
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:35px;
+width:65px;
+height:65px;
+border-radius:50%;
+border:3px solid white;
+background:#fff;
+object-fit:contain;
+padding:3px;
 }
-.brand h1{
- font-size:25px;
- margin:5px;
+.header h2{
+font-size:20px;
+margin:6px 0 2px;
 }
-.brand h2{
- font-size:23px;
- color:#ffe34c;
- margin:5px;
+.header p{
+font-size:12px;
+margin:3px 0;
 }
-.tagline{
- font-size:16px;
- margin:10px;
+.hero{
+margin:12px;
+height:175px;
+border-radius:16px;
+background:linear-gradient(#0003,#0008),
+url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000')
+center/cover;
+display:flex;
+align-items:end;
+justify-content:center;
+color:white;
+font-size:22px;
+font-weight:bold;
+padding:18px;
 }
-.welcome{
- font-size:35px;
- text-shadow:2px 2px 6px #000;
- margin:25px 5px 8px;
+.heading{
+text-align:center;
+font-size:19px;
+margin:18px 0 10px;
 }
-.slogan{
- font-size:19px;
- text-shadow:1px 1px 4px #000;
+.menu{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:11px;
+padding:12px;
 }
-.lang{
- background:#ffd43b;
- color:#123b72;
- border:0;
- padding:12px 26px;
- border-radius:30px;
- font-weight:bold;
- font-size:17px;
- margin:12px;
- cursor:pointer;
+.item{
+background:white;
+border-radius:14px;
+padding:18px 8px;
+text-align:center;
+box-shadow:0 3px 10px #0001;
+font-size:15px;
+font-weight:bold;
 }
-.explore{
- background:#ffd43b;
- color:#124477;
- border:0;
- padding:13px 25px;
- border-radius:30px;
- font-size:17px;
- font-weight:bold;
+.item span{
+display:block;
+font-size:29px;
+margin-bottom:7px;
 }
-.searchbar{
- display:flex;
- gap:7px;
- padding:12px;
- background:white;
-}
-.searchbar input{
- flex:1;
- min-width:0;
- padding:13px;
- border:2px solid #b8d1e7;
- border-radius:14px;
- font-size:16px;
-}
-.searchbar button{
- border:0;
- border-radius:12px;
- background:#0753a2;
- color:white;
- padding:10px 17px;
- font-size:22px;
-}
-.section-title{
- text-align:center;
- color:#07539c;
- font-size:23px;
- margin:22px 5px 12px;
-}
-.grid{
- display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));
- gap:9px;
- padding:10px;
-}
-.tile{
- min-height:125px;
- border:2px solid white;
- border-radius:20px;
- color:white;
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
- text-align:center;
- padding:8px 3px;
- box-shadow:0 3px 8px #0003;
- cursor:pointer;
- font-weight:bold;
-}
-.tile .emoji{
- font-size:35px;
- margin-bottom:8px;
-}
-.tile span:last-child{
- font-size:14px;
- line-height:1.5;
-}
-.blue{background:linear-gradient(145deg,#12b6ff,#0636a5)}
-.green{background:linear-gradient(145deg,#65d943,#00752d)}
-.orange{background:linear-gradient(145deg,#ffcf45,#ef5700)}
-.purple{background:linear-gradient(145deg,#d36aff,#6b18b9)}
-.red{background:linear-gradient(145deg,#ff6262,#c90020)}
-.teal{background:linear-gradient(145deg,#23dfb2,#00836d)}
-.panel{
- background:white;
- margin:14px 10px;
- padding:18px;
- border-radius:16px;
- box-shadow:0 2px 8px #0002;
- text-align:center;
-}
-.panel h2{color:#07539c}
-footer{
- background:#073d83;
- color:white;
- text-align:center;
- padding:20px 10px;
- margin-top:20px;
-}
-.bottom{
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- display:flex;
- justify-content:space-around;
- background:#063a83;
- color:white;
- padding:9px 2px;
- z-index:10;
-}
-.bottom button{
- background:none;
- border:0;
- color:white;
- font-size:13px;
- font-weight:bold;
- cursor:pointer;
-}
-.bottom span{
- display:block;
- font-size:23px;
- margin-bottom:3px;
-}
-@media(max-width:380px){
- .tile{min-height:108px}
- .tile .emoji{font-size:29px}
- .tile span:last-child{font-size:12px}
- .brand h1{font-size:21px}
- .welcome{font-size:29px}
- .hero{min-height:360px}
+.footer{
+background:#075b3b;
+color:white;
+text-align:center;
+padding:18px 8px;
+margin-top:15px;
+font-size:13px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ONE HOME PAGE -->
-<header class="hero">
-
- <div class="brand">
-  <div class="logo">🏞️</div>
-  <div>
-   <h1>Mardwal Soon Valley</h1>
-   <h2>مردوال سون ویلی</h2>
-  </div>
- </div>
-
- <p class="tagline" id="tagline">
- وادی سون کی خوبصورتی، ثقافت اور خبریں
- </p>
-
- <button class="lang" onclick="toggleLanguage()" id="languageButton">
- English
- </button>
-
- <h1 class="welcome" id="welcome">
- خوش آمدید مردوال سون ویلی
- </h1>
-
- <p class="slogan" id="slogan">
- قدرت کے حسین مناظر، ہماری پہچان
- </p>
-
- <button class="explore" onclick="document.getElementById('sections').scrollIntoView({behavior:'smooth'})" id="explore">
- وادی سون دیکھیں
- </button>
-
+<header class="header">
+<img class="logo"
+src="logo.png"
+alt="Mardwal Soon Valley Logo"
+onerror="this.style.display='none'">
+<h2>مردوال سون ویلی</h2>
+<p>MARDWAL SOON VALLEY</p>
 </header>
 
-<!-- SEARCH -->
-<div class="searchbar">
- <input id="search" placeholder="تلاش کریں..." oninput="searchTiles()">
- <button onclick="document.getElementById('search').focus()">⌕</button>
-</div>
+<section class="hero">
+خوش آمدید وادیٔ سون
+</section>
 
-<h2 class="section-title" id="sectionHeading">
- ہماری اہم سہولیات
-</h2>
+<h3 class="heading">وادیٔ سون کی دنیا میں خوش آمدید</h3>
 
-<!-- ALL CATEGORIES -->
-<div class="grid" id="sections">
+<section class="menu">
+<div class="item"><span>🏞️</span>وادیٔ سون کی سیر</div>
+<div class="item"><span>📰</span>تازہ خبریں</div>
+<div class="item"><span>🏨</span>ہوٹلز اور ریسٹورنٹس</div>
+<div class="item"><span>🛍️</span>آن لائن خرید و فروخت</div>
+<div class="item"><span>📸</span>تصاویر اور ویڈیوز</div>
+<div class="item"><span>📺</span>لائیو تقریبات</div>
+<div class="item"><span>🌤️</span>موسم کی معلومات</div>
+<div class="item"><span>📍</span>مشہور مقامات</div>
+<div class="item"><span>📞</span>رابطہ کریں</div>
+<div class="item"><span>📘</span>ہمارا فیس بک پیج</div>
+</section>
 
- <div class="tile blue" onclick="openSection('news')">
-  <span class="emoji">📰</span>
-  <span data-ur="تازہ ترین خبریں" data-en="Latest News">تازہ ترین خبریں</span>
- </div>
-
- <div class="tile green" onclick="openSection('mosques')">
-  <span class="emoji">🕌</span>
-  <span data-ur="مساجد اور اسلامی خدمات" data-en="Mosques & Islamic Services">مساجد اور اسلامی خدمات</span>
- </div>
-
- <div class="tile orange" onclick="openSection('hotels')">
-  <span class="emoji">🏨</span>
-  <span data-ur="ہوٹلز اور رہائش" data-en="Hotels & Accommodation">ہوٹلز اور رہائش</span>
- </div>
-
- <div class="tile purple" onclick="openSection('tourism')">
-  <span class="emoji">🏞️</span>
-  <span data-ur="سیاحت اور مقامات" data-en="Tourism & Places">سیاحت اور مقامات</span>
- </div>
-
- <div class="tile teal" onclick="openSection('market')">
-  <span class="emoji">🛒</span>
-  <span data-ur="آن لائن خرید و فروخت" data-en="Online Marketplace">آن لائن خرید و فروخت</span>
- </div>
-
- <div class="tile blue" onclick="openSection('sports')">
-  <span class="emoji">🏏</span>
-  <span data-ur="کھیل اور تفریح" data-en="Sports & Entertainment">کھیل اور تفریح</span>
- </div>
-
- <div class="tile red" onclick="openSection('live')">
-  <span class="emoji">📺</span>
-  <span data-ur="لائیو نشریات" data-en="Live Broadcasting">لائیو نشریات</span>
- </div>
-
- <div class="tile green" onclick="openSection('emergency')">
-  <span class="emoji">🚨</span>
-  <span data-ur="ایمرجنسی نمبرز" data-en="Emergency Numbers">ایمرجنسی نمبرز</span>
- </div>
-
- <div class="tile purple" onclick="openSection('people')">
-  <span class="emoji">👥</span>
-  <span data-ur="اہم شخصیات" data-en="Important Personalities">اہم شخصیات</span>
- </div>
-
- <div class="tile blue" onclick="openSection('events')">
-  <span class="emoji">📅</span>
-  <span data-ur="تقریبات و معلومات" data-en="Events & Information">تقریبات و معلومات</span>
- </div>
-
- <div class="tile green" onclick="openSection('agriculture')">
-  <span class="emoji">🚜</span>
-  <span data-ur="زراعت و کاشتکاری" data-en="Agriculture">زراعت و کاشتکاری</span>
- </div>
-
- <div class="tile orange" onclick="openSection('weather')">
-  <span class="emoji">🌤️</span>
-  <span data-ur="موسم کی معلومات" data-en="Weather Information">موسم کی معلومات</span>
- </div>
-
- <div class="tile green" onclick="openSection('shops')">
-  <span class="emoji">🏪</span>
-  <span data-ur="خرید و فروخت مارکیٹ" data-en="Local Market">خرید و فروخت مارکیٹ</span>
- </div>
-
- <div class="tile blue" onclick="openSection('business')">
-  <span class="emoji">💼</span>
-  <span data-ur="کاروباری ڈائریکٹری" data-en="Business Directory">کاروباری ڈائریکٹری</span>
- </div>
-
- <div class="tile green" onclick="openSection('location')">
-  <span class="emoji">📍</span>
-  <span data-ur="علاقائی معلومات" data-en="Local Information">علاقائی معلومات</span>
- </div>
-
-</div>
-
-<div class="panel" id="content">
- <h2 id="panelTitle">مردوال سون ویلی میں خوش آمدید</h2>
- <p id="panelText">وادی سون کی خبروں، سیاحت اور مقامی معلومات کے لیے ہمارا پلیٹ فارم۔</p>
-</div>
-
-<footer>
- <h3>Mardwal Soon Valley</h3>
- <p>مردوال سون ویلی</p>
- <p>ہماری وادی، ہماری پہچان</p>
- <p>© 2026 All Rights Reserved</p>
+<footer class="footer">
+مردوال سون ویلی<br>
+Mardwal Soon Valley<br>
+وادیٔ سون کی پہچان
 </footer>
-
-<!-- BOTTOM NAVIGATION -->
-<nav class="bottom">
-
- <button onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <span>🏠</span>
-  <label data-ur="ہوم" data-en="Home">ہوم</label>
- </button>
-
- <button onclick="document.getElementById('search').focus()">
-  <span>🔍</span>
-  <label data-ur="تلاش" data-en="Search">تلاش</label>
- </button>
-
- <button onclick="openSection('live')">
-  <span>▶️</span>
-  <label data-ur="لائیو" data-en="Live">لائیو</label>
- </button>
-
- <button onclick="openSection('profile')">
-  <span>👤</span>
-  <label data-ur="پروفائل" data-en="Profile">پروفائل</label>
- </button>
-
- <button onclick="openSection('more')">
-  <span>•••</span>
-  <label data-ur="مزید" data-en="More">مزید</label>
- </button>
-
-</nav>
-
-<script>
-let english=false;
-
-function toggleLanguage(){
- english=!english;
-
- document.documentElement.lang=english?'en':'ur';
- document.documentElement.dir=english?'ltr':'rtl';
-
- document.getElementById('tagline').textContent=
- english?'Beauty, Culture and News of Soon Valley':'وادی سون کی خوبصورتی، ثقافت اور خبریں';
-
- document.getElementById('languageButton').textContent=
- english?'اردو':'English';
-
- document.getElementById('welcome').textContent=
- english?'Welcome to Mardwal Soon Valley':'خوش آمدید مردوال سون ویلی';
-
- document.getElementById('slogan').textContent=
- english?'Beautiful Nature, Our Identity':'قدرت کے حسین مناظر، ہماری پہچان';
-
- document.getElementById('explore').textContent=
- english?'Explore Soon Valley':'وادی سون دیکھیں';
-
- document.getElementById('sectionHeading').textContent=
- english?'Our Main Services':'ہماری اہم سہولیات';
-
- document.getElementById('search').placeholder=
- english?'Search...':'تلاش کریں...';
-
- document.querySelectorAll('[data-ur]').forEach(el=>{
-  el.textContent=english?el.dataset.en:el.dataset.ur;
- });
-
- document.getElementById('panelTitle').textContent=
- english?'Welcome to Mardwal Soon Valley':'مردوال سون ویلی میں خوش آمدید';
-
- document.getElementById('panelText').textContent=
- english?'Our platform for Soon Valley news, tourism and local information.':'وادی سون کی خبروں، سیاحت اور مقامی معلومات کے لیے ہمارا پلیٹ فارم۔';
-}
-
-function searchTiles(){
- let q=document.getElementById('search').value.toLowerCase();
- document.querySelectorAll('.tile').forEach(tile=>{
-  tile.style.display=tile.innerText.toLowerCase().includes(q)?'flex':'none';
- });
-}
-
-function openSection(section){
- let titles={
- news:['تازہ ترین خبریں','Latest News'],
- mosques:['مساجد اور اسلامی خدمات','Mosques & Islamic Services'],
- hotels:['ہوٹلز اور رہائش','Hotels & Accommodation'],
- tourism:['سیاحت اور مقامات','Tourism & Places'],
- market:['آن لائن خرید و فروخت','Online Marketplace'],
- sports:['کھیل اور تفریح','Sports & Entertainment'],
- live:['لائیو نشریات','Live Broadcasting'],
- emergency:['ایمرجنسی نمبرز','Emergency Numbers'],
- people:['اہم شخصیات','Important Personalities'],
- events:['تقریبات و معلومات','Events & Information'],
- agriculture:['زراعت و کاشتکاری','Agriculture'],
- weather:['موسم کی معلومات','Weather Information'],
- shops:['خرید و فروخت مارکیٹ','Local Market'],
- business:['کاروباری ڈائریکٹری','Business Directory'],
- location:['علاقائی معلومات','Local Information'],
- profile:['پروفائل','Profile'],
- more:['مزید سہولیات','More Services']
- };
-
- let item=titles[section];
- if(!item)return;
-
- document.getElementById('panelTitle').textContent=
- english?item[1]:item[0];
-
- document.getElementById('panelText').textContent=
- english?'This section is ready for its content and services.':'اس سیکشن میں معلومات اور سہولیات جلد شامل کی جائیں گی۔';
-
- document.getElementById('content').scrollIntoView({behavior:'smooth'});
-}
-</script>
 
 </body>
 </html>
