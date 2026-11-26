@@ -1,271 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
- <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#075b3b">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#075b3b">
+<meta name="theme-color" content="#064b9b">
+<meta name="description" content="Mardwal Soon Valley - Tourism, News, Hotels and Local Information">
+<link rel="manifest" href="/manifest.json">
 <title>مردوال سون ویلی | Mardwal Soon Valley</title>
-
 <style>
 *{box-sizing:border-box}
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js")
-      .catch(error => console.log("Service Worker Error:", error));
-  });
-}
-</script> 
-body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#f3f7f2;
- color:#183b2c;
-}
-header{
- background:#075b3b;
- color:white;
- padding:16px;
- text-align:center;
-}
-header h1{margin:5px;font-size:27px}
-header p{margin:7px}
-.lang{
- background:#f4c542;
- color:#183b2c;
- border:0;
- padding:10px 18px;
- border-radius:20px;
- font-weight:bold;
-}
-nav{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- background:#06472e;
-}
-nav a{
- color:white;
- text-decoration:none;
- padding:13px 12px;
- font-size:14px;
-}
-.hero{
- min-height:430px;
- background:
- linear-gradient(#0005,#0008),
- url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e')
- center/cover;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- color:white;
- padding:25px;
-}
-.hero h2{font-size:34px}
-.hero p{font-size:18px}
-.btn{
- display:inline-block;
- background:#e8b832;
- color:#173b2b;
- padding:12px 22px;
- border-radius:25px;
- text-decoration:none;
- font-weight:bold;
- margin:6px;
-}
-section{padding:30px 16px}
-.heading{
- text-align:center;
- color:#075b3b;
- font-size:25px;
- margin-bottom:22px;
-}
-.cards{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
- gap:18px;
- max-width:1100px;
- margin:auto;
-}
-.card{
- background:white;
- border-radius:15px;
- overflow:hidden;
- box-shadow:0 4px 15px #0001;
-}
-.card img{
- width:100%;
- height:175px;
- object-fit:cover;
-}
-.card-content{padding:16px}
-.card h3{color:#075b3b}
-.card p{line-height:1.8}
-.info{
- background:#075b3b;
- color:white;
- text-align:center;
- padding:30px 15px;
-}
-.info h2{font-size:25px}
-footer{
- background:#043522;
- color:white;
- text-align:center;
- padding:22px;
- line-height:2;
-}
+body{margin:0;font-family:Arial,sans-serif;background:#eef4fa;color:#17324d}
+header{background:linear-gradient(135deg,#064b9b,#0879c9);color:white;text-align:center;padding:18px 10px}
+.logo{width:85px;height:85px;border:4px solid #ffd43b;border-radius:50%;margin:0 auto 8px;background:linear-gradient(135deg,#168e45,#034b29);display:flex;align-items:center;justify-content:center;font-size:34px}
+header h1{font-size:27px;margin:5px}
+header h2{font-size:23px;margin:5px;color:#ffe34c}
+header p{margin:8px;font-size:15px}
+.lang{background:#ffd43b;color:#123b72;border:0;padding:12px 25px;border-radius:30px;font-weight:bold;font-size:17px;margin:8px;cursor:pointer}
+.searchbar{display:flex;gap:7px;padding:12px;background:#fff}
+.searchbar input{flex:1;min-width:0;padding:13px;border:2px solid #b8d1e7;border-radius:14px;font-size:16px}
+.searchbar button{border:0;border-radius:12px;background:#0753a2;color:white;padding:10px 17px;font-size:22px}
+.hero{min-height:310px;background:linear-gradient(#001b3370,#001b3380),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200') center/cover;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:35px 15px}
+.hero h1{font-size:36px;text-shadow:2px 2px 5px #000}
+.hero p{font-size:19px}
+.hero button{background:#ffd43b;color:#124477;border:0;padding:16px 28px;border-radius:30px;font-weight:bold;font-size:18px}
+.section-title{text-align:center;color:#07539c;font-size:23px;margin:20px 5px 12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:10px}
+.tile{min-height:115px;border:2px solid white;border-radius:20px;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 3px;box-shadow:0 3px 7px #0003;cursor:pointer;font-weight:bold}
+.tile .emoji{font-size:35px;margin-bottom:7px}
+.tile span:last-child{font-size:14px;line-height:1.4}
+.blue{background:linear-gradient(145deg,#12b6ff,#0636a5)}
+.green{background:linear-gradient(145deg,#65d943,#00752d)}
+.orange{background:linear-gradient(145deg,#ffcf45,#ef5700)}
+.purple{background:linear-gradient(145deg,#d36aff,#6b18b9)}
+.red{background:linear-gradient(145deg,#ff6262,#c90020)}
+.teal{background:linear-gradient(145deg,#23dfb2,#00836d)}
+.panel{background:white;margin:14px 10px;padding:18px;border-radius:16px;box-shadow:0 2px 8px #0002;text-align:center}
+.panel h2{color:#07539c}
+footer{background:#073d83;color:white;text-align:center;padding:20px 10px;margin-top:20px}
+.bottom{position:sticky;bottom:0;display:flex;justify-content:space-around;background:#063a83;color:white;padding:10px 2px;z-index:5}
+.bottom button{background:none;border:0;color:white;font-size:13px;font-weight:bold;cursor:pointer}
+.bottom span{display:block;font-size:23px}
+@media(max-width:380px){.tile{min-height:105px}.tile .emoji{font-size:29px}.tile span:last-child{font-size:12px}header h1{font-size:23px}.hero h1{font-size:30px}}
 </style>
 </head>
-
 <body>
-
 <header>
+<div class="logo">🏞️</div>
 <h1>Mardwal Soon Valley</h1>
-<p>مردوال سون ویلی</p>
-<p data-ur="وادیٔ سون کی خوبصورتی، ثقافت اور خبریں"
-data-en="Beauty, Culture and News of Soon Valley">
-وادیٔ سون کی خوبصورتی، ثقافت اور خبریں</p>
-<button class="lang" onclick="changeLang()">English</button>
+<h2>مردوال سون ویلی</h2>
+<p id="tagline">وادی سون کی خوبصورتی، ثقافت اور خبریں</p>
+<button class="lang" onclick="toggleLanguage()" id="languageButton">English</button>
 </header>
-
-<nav>
-<a href="#home" data-ur="ہوم" data-en="Home">ہوم</a>
-<a href="#places" data-ur="سیاحتی مقامات" data-en="Tourism">سیاحتی مقامات</a>
-<a href="#hotels" data-ur="ہوٹلز" data-en="Hotels">ہوٹلز</a>
-<a href="#market" data-ur="خرید و فروخت" data-en="Marketplace">خرید و فروخت</a>
-<a href="#live" data-ur="لائیو" data-en="Live">لائیو</a>
+<div class="searchbar">
+<input id="search" placeholder="تلاش کریں..." oninput="searchTiles()">
+<button onclick="document.getElementById('search').focus()">⌕</button>
+</div>
+<section class="hero">
+<h1 id="welcome">خوش آمدید مردوال سون ویلی</h1>
+<p id="slogan">قدرت کے حسین مناظر، ہماری پہچان</p>
+<button onclick="document.getElementById('sections').scrollIntoView({behavior:'smooth'})" id="explore">وادی سون دیکھیں</button>
+</section>
+<h2 class="section-title" id="sectionHeading">ہماری اہم سہولیات</h2>
+<div class="grid" id="sections">
+<div class="tile blue" onclick="openSection('news')"><span class="emoji">📰</span><span data-ur="تازہ ترین خبریں" data-en="Latest News">تازہ ترین خبریں</span></div>
+<div class="tile green" onclick="openSection('mosques')"><span class="emoji">🕌</span><span data-ur="مساجد اور اسلامی خدمات" data-en="Mosques & Islamic Services">مساجد اور اسلامی خدمات</span></div>
+<div class="tile orange" onclick="openSection('hotels')"><span class="emoji">🏨</span><span data-ur="ہوٹلز اور رہائش" data-en="Hotels & Accommodation">ہوٹلز اور رہائش</span></div>
+<div class="tile purple" onclick="openSection('tourism')"><span class="emoji">🏞️</span><span data-ur="سیاحت اور مقامات" data-en="Tourism & Places">سیاحت اور مقامات</span></div>
+<div class="tile teal" onclick="openSection('market')"><span class="emoji">🛒</span><span data-ur="آن لائن خرید و فروخت" data-en="Online Marketplace">آن لائن خرید و فروخت</span></div>
+<div class="tile blue" onclick="openSection('sports')"><span class="emoji">🏏</span><span data-ur="کھیل اور تفریح" data-en="Sports & Entertainment">کھیل اور تفریح</span></div>
+<div class="tile red" onclick="openSection('live')"><span class="emoji">📺</span><span data-ur="لائیو نشریات" data-en="Live Broadcasting">لائیو نشریات</span></div>
+<div class="tile green" onclick="openSection('emergency')"><span class="emoji">🚨</span><span data-ur="ایمرجنسی نمبرز" data-en="Emergency Numbers">ایمرجنسی نمبرز</span></div>
+<div class="tile purple" onclick="openSection('people')"><span class="emoji">👥</span><span data-ur="اہم شخصیات" data-en="Important Personalities">اہم شخصیات</span></div>
+<div class="tile blue" onclick="openSection('events')"><span class="emoji">📅</span><span data-ur="تقریبات و معلومات" data-en="Events & Information">تقریبات و معلومات</span></div>
+<div class="tile green" onclick="openSection('agriculture')"><span class="emoji">🚜</span><span data-ur="زراعت و کاشتکاری" data-en="Agriculture">زراعت و کاشتکاری</span></div>
+<div class="tile orange" onclick="openSection('weather')"><span class="emoji">🌤️</span><span data-ur="موسم کی معلومات" data-en="Weather Information">موسم کی معلومات</span></div>
+<div class="tile green" onclick="openSection('shops')"><span class="emoji">🏪</span><span data-ur="خرید و فروخت مارکیٹ" data-en="Local Market">خرید و فروخت مارکیٹ</span></div>
+<div class="tile blue" onclick="openSection('business')"><span class="emoji">💼</span><span data-ur="کاروباری ڈائریکٹری" data-en="Business Directory">کاروباری ڈائریکٹری</span></div>
+<div class="tile green" onclick="openSection('location')"><span class="emoji">📍</span><span data-ur="علاقائی معلومات" data-en="Local Information">علاقائی معلومات</span></div>
+</div>
+<div class="panel" id="content">
+<h2 id="panelTitle">مردوال سون ویلی میں خوش آمدید</h2>
+<p id="panelText">وادی سون کی خبروں، سیاحت اور مقامی معلومات کے لیے ہمارا پلیٹ فارم۔</p>
+</div>
+<footer><h3>Mardwal Soon Valley</h3><p>مردوال سون ویلی</p><p>ہماری وادی، ہماری پہچان</p><p>© 2026 All Rights Reserved</p></footer>
+<nav class="bottom">
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span>🏠</span><label data-ur="ہوم" data-en="Home">ہوم</label></button>
+<button onclick="document.getElementById('search').focus()"><span>🔍</span><label data-ur="تلاش" data-en="Search">تلاش</label></button>
+<button onclick="openSection('live')"><span>▶️</span><label data-ur="لائیو" data-en="Live">لائیو</label></button>
+<button onclick="openSection('profile')"><span>👤</span><label data-ur="پروفائل" data-en="Profile">پروفائل</label></button>
+<button onclick="openSection('more')"><span>•••</span><label data-ur="مزید" data-en="More">مزید</label></button>
 </nav>
-
-<div class="hero" id="home">
-<div>
-<h2 data-ur="خوش آمدید مردوال سون ویلی"
-data-en="Welcome to Mardwal Soon Valley">
-خوش آمدید مردوال سون ویلی
-</h2>
-<p data-ur="قدرت کے حسین مناظر، ہماری پہچان"
-data-en="Beautiful Nature, Our Identity">
-قدرت کے حسین مناظر، ہماری پہچان
-</p>
-<a href="#places" class="btn"
-data-ur="وادیٔ سون دیکھیں" data-en="Explore Soon Valley">
-وادیٔ سون دیکھیں</a>
-</div>
-</div>
-
-<section id="places">
-<h2 class="heading" data-ur="وادیٔ سون کے خوبصورت مقامات"
-data-en="Beautiful Places of Soon Valley">
-وادیٔ سون کے خوبصورت مقامات</h2>
-
-<div class="cards">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
-<div class="card-content">
-<h3 data-ur="اوچھالی جھیل" data-en="Uchhali Lake">اوچھالی جھیل</h3>
-<p data-ur="وادیٔ سون کا ایک حسین قدرتی مقام۔"
-data-en="A beautiful natural destination of Soon Valley.">
-وادیٔ سون کا ایک حسین قدرتی مقام۔</p>
-</div></div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-<div class="card-content">
-<h3 data-ur="سکیسر" data-en="Sakesar">سکیسر</h3>
-<p data-ur="پہاڑوں اور قدرتی مناظر کی خوبصورت دنیا۔"
-data-en="A beautiful world of mountains and nature.">
-پہاڑوں اور قدرتی مناظر کی خوبصورت دنیا۔</p>
-</div></div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027">
-<div class="card-content">
-<h3 data-ur="وادیٔ سون" data-en="Soon Valley">وادیٔ سون</h3>
-<p data-ur="قدرتی حسن اور ثقافت سے مالا مال علاقہ۔"
-data-en="A region rich in natural beauty and culture.">
-قدرتی حسن اور ثقافت سے مالا مال علاقہ۔</p>
-</div></div>
-</div>
-</section>
-
-<section id="hotels" style="background:#e5efe6">
-<h2 class="heading" data-ur="ہوٹلز اور ریسٹورنٹس"
-data-en="Hotels & Restaurants">
-ہوٹلز اور ریسٹورنٹس</h2>
-<div class="cards">
-<div class="card">
-<div class="card-content">
-<h3 data-ur="ہوٹل ڈائریکٹری" data-en="Hotel Directory">ہوٹل ڈائریکٹری</h3>
-<p data-ur="وادیٔ سون میں رہائش کے لیے ہوٹلز کی معلومات۔"
-data-en="Find accommodation in Soon Valley.">
-وادیٔ سون میں رہائش کے لیے ہوٹلز کی معلومات۔</p>
-</div></div>
-<div class="card">
-<div class="card-content">
-<h3 data-ur="ریسٹورنٹس" data-en="Restaurants">ریسٹورنٹس</h3>
-<p data-ur="کھانے پینے کی بہترین جگہوں کی معلومات۔"
-data-en="Discover places to eat and enjoy.">
-کھانے پینے کی بہترین جگہوں کی معلومات۔</p>
-</div></div>
-</div>
-</section>
-
-<section id="market">
-<h2 class="heading" data-ur="آن لائن خرید و فروخت"
-data-en="Online Marketplace">آن لائن خرید و فروخت</h2>
-<div class="info">
-<h2 data-ur="اپنی چیز فروخت کریں"
-data-en="Sell Your Products">اپنی چیز فروخت کریں</h2>
-<p data-ur="اپنی اشیاء کی تفصیل بھیجیں۔ ایڈمن کی منظوری کے بعد اشتہار شائع ہوگا۔"
-data-en="Submit your listing. It will be published after admin approval.">
-اپنی اشیاء کی تفصیل بھیجیں۔ ایڈمن کی منظوری کے بعد اشتہار شائع ہوگا۔
-</p>
-</div>
-</section>
-
-<section id="live">
-<h2 class="heading" data-ur="لائیو تقریبات اور نشریات"
-data-en="Live Events & Broadcasts">
-لائیو تقریبات اور نشریات</h2>
-<div class="info">
-<h2 data-ur="وادیٔ سون کی تقریبات"
-data-en="Soon Valley Events">وادیٔ سون کی تقریبات</h2>
-<p data-ur="تقریبات اور خصوصی پروگراموں کی لائیو نشریات یہاں دیکھی جا سکیں گی۔"
-data-en="Watch live broadcasts of special events and programs here.">
-تقریبات اور خصوصی پروگراموں کی لائیو نشریات یہاں دیکھی جا سکیں گی۔
-</p>
-</div>
-</section>
-
-<footer>
-<h3>مردوال سون ویلی</h3>
-<p data-ur="وادیٔ سون کی اپنی ویب سائٹ"
-data-en="Your Own Soon Valley Website">
-وادیٔ سون کی اپنی ویب سائٹ</p>
-<p>© Mardwal Soon Valley</p>
-</footer>
-
 <script>
 let english=false;
-
-function changeLang(){
+function toggleLanguage(){
  english=!english;
- document.documentElement.lang=english?"en":"ur";
- document.documentElement.dir=english?"ltr":"rtl";
-
- document.querySelectorAll("[data-ur]").forEach(el=>{
- el.textContent=english?el.dataset.en:el.dataset.ur;
- });
-
- document.querySelector(".lang").textContent=
- english?"اردو":"English";
+ document.documentElement.lang=english?'en':'ur';
+ document.documentElement.dir=english?'ltr':'rtl';
+ document.getElementById('tagline').textContent=english?'Beauty, Culture and News of Soon Valley':'وادی سون کی خوبصورتی، ثقافت اور خبریں';
+ document.getElementById('languageButton').textContent=english?'اردو':'English';
+ document.getElementById('welcome').textContent=english?'Welcome to Mardwal Soon Valley':'خوش آمدید مردوال سون ویلی';
+ document.getElementById('slogan').textContent=english?'Beautiful Nature, Our Identity':'قدرت کے حسین مناظر، ہماری پہچان';
+ document.getElementById('explore').textContent=english?'Explore Soon Valley':'وادی سون دیکھیں';
+ document.getElementById('sectionHeading').textContent=english?'Our Main Services':'ہماری اہم سہولیات';
+ document.getElementById('search').placeholder=english?'Search...':'تلاش کریں...';
+ document.querySelectorAll('[data-ur]').forEach(el=>{el.textContent=english?el.dataset.en:el.dataset.ur;});
+}
+function searchTiles(){
+ let q=document.getElementById('search').value.toLowerCase();
+ document.querySelectorAll('.tile').forEach(tile=>{tile.style.display=tile.innerText.toLowerCase().includes(q)?'flex':'none';});
+}
+function openSection(section){
+ let titles={
+ news:['تازہ ترین خبریں','Latest News'],mosques:['مساجد اور اسلامی خدمات','Mosques & Islamic Services'],
+ hotels:['ہوٹلز اور رہائش','Hotels & Accommodation'],tourism:['سیاحت اور مقامات','Tourism & Places'],
+ market:['آن لائن خرید و فروخت','Online Marketplace'],sports:['کھیل اور تفریح','Sports & Entertainment'],
+ live:['لائیو نشریات','Live Broadcasting'],emergency:['ایمرجنسی نمبرز','Emergency Numbers'],
+ people:['اہم شخصیات','Important Personalities'],events:['تقریبات و معلومات','Events & Information'],
+ agriculture:['زراعت و کاشتکاری','Agriculture'],weather:['موسم کی معلومات','Weather Information'],
+ shops:['خرید و فروخت مارکیٹ','Local Market'],business:['کاروباری ڈائریکٹری','Business Directory'],
+ location:['علاقائی معلومات','Local Information'],profile:['پروفائل','Profile'],more:['مزید سہولیات','More Services']
+ };
+ let item=titles[section];if(!item)return;
+ document.getElementById('panelTitle').textContent=english?item[1]:item[0];
+ document.getElementById('panelText').textContent=english?'This section is ready for its content and services.':'اس سیکشن میں معلومات اور سہولیات جلد شامل کی جائیں گی۔';
+ document.getElementById('content').scrollIntoView({behavior:'smooth'});
 }
 </script>
-
 </body>
 </html>
