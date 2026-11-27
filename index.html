@@ -4,226 +4,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#073b91">
-<title>مردوال سون ویلی</title>
+<meta name="theme-color" content="#06358e">
+<title>Mardwal Soon Valley</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body {
-  background: #eaf3f9;
-  font-family: 'Noto Nastaliq Urdu', serif;
-  color: #fff;
-  padding-bottom: 85px;
+  background:#e8eff8;
+  font-family:'Noto Nastaliq Urdu',serif;
+  padding-bottom:90px;
+  color:#fff;
 }
 
 .app {
-  max-width: 600px;
-  margin: auto;
-  min-height: 100vh;
-  background: white;
-  overflow: hidden;
+  max-width:600px;
+  margin:auto;
+  min-height:100vh;
+  background:#fff;
+  overflow:hidden;
 }
 
 /* HEADER */
 .header {
-  min-height: 270px;
-  padding: 20px 14px;
+  min-height:335px;
+  padding:18px 12px 24px;
+  position:relative;
+  text-align:center;
   background:
-    linear-gradient(180deg, rgba(0,30,100,.35), rgba(0,35,90,.45)),
-    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')
-    center/cover;
-  position: relative;
-  text-align: center;
+    linear-gradient(180deg,rgba(0,30,100,.22),rgba(0,25,65,.62)),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200')
+    center/cover no-repeat;
 }
 
-.logo {
-  width: 95px;
-  height: 95px;
-  margin: 5px auto 8px;
-  border-radius: 50%;
-  border: 4px solid #ffdf53;
-  background: linear-gradient(145deg,#0b6c39,#003b23);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 43px;
-  box-shadow: 0 3px 15px #0008;
+.top-buttons {
+  position:absolute;
+  top:12px;
+  left:12px;
+  right:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  direction:ltr;
+}
+
+.language {
+  background:#063c91;
+  color:#fff;
+  border:2px solid #ffdf50;
+  border-radius:22px;
+  padding:7px 15px;
+  font-weight:bold;
+  font-size:14px;
+  cursor:pointer;
 }
 
 .bell {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  font-size: 28px;
+  font-size:27px;
+  text-shadow:0 2px 5px #000;
+}
+
+.logo {
+  width:112px;
+  height:112px;
+  margin:35px auto 5px;
+  border-radius:50%;
+  border:5px solid #ffdf50;
+  background:linear-gradient(145deg,#08783d,#003c24);
+  box-shadow:0 3px 15px #0008;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:58px;
 }
 
 .header h1 {
-  font-size: clamp(25px, 7vw, 38px);
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 2px 3px 5px #000;
-  line-height: 2;
+  font-size:clamp(28px,7vw,42px);
+  color:#fff;
+  text-shadow:2px 3px 6px #000;
+  line-height:2;
 }
 
 .english {
-  direction: ltr;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 25px;
-  color: white;
-  text-shadow: 2px 2px 5px #001d66;
+  direction:ltr;
+  font-family:Arial,sans-serif;
+  font-weight:800;
+  font-size:clamp(22px,6vw,30px);
+  color:#fff;
+  text-shadow:2px 3px 5px #001b69;
 }
 
 .slogan {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 5px 22px;
-  background: #08783b;
-  border: 2px solid #ffe36a;
-  border-radius: 30px;
-  font-size: 17px;
+  display:inline-block;
+  margin-top:16px;
+  padding:7px 25px;
+  background:linear-gradient(90deg,#00652f,#008b43);
+  border:3px solid #ffdf50;
+  border-radius:35px;
+  font-size:18px;
+  box-shadow:0 3px 8px #0006;
 }
 
 /* SEARCH */
 .search-area {
-  display: flex;
-  gap: 8px;
-  padding: 12px;
-  background: #f5f8fc;
+  display:flex;
+  gap:9px;
+  padding:14px;
+  background:#f1f6fc;
 }
 
 .search-area input {
-  flex: 1;
-  min-width: 0;
-  padding: 12px;
-  border: 1px solid #b9c7d8;
-  border-radius: 15px;
-  font-family: inherit;
-  font-size: 15px;
-  outline: none;
+  flex:1;
+  min-width:0;
+  padding:13px;
+  border:1px solid #bdcbdc;
+  border-radius:18px;
+  font-family:inherit;
+  font-size:16px;
+  outline:none;
+  background:#fff;
 }
 
 .search-area button {
-  width: 55px;
-  border: none;
-  border-radius: 13px;
-  background: #063d9d;
-  color: white;
-  font-size: 26px;
+  width:62px;
+  border:none;
+  border-radius:16px;
+  background:#063e9d;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
 }
 
-/* SECTION */
+/* WELCOME */
 .section-title {
-  text-align: center;
-  color: #073b91;
-  font-size: 20px;
-  padding: 10px;
-  font-weight: bold;
+  text-align:center;
+  color:#073b91;
+  font-size:22px;
+  padding:14px 5px;
+  font-weight:bold;
 }
 
-/* CARDS */
+/* CATEGORY CARDS */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 11px;
-  padding: 10px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:11px;
+  padding:10px;
 }
 
 .card {
-  min-height: 130px;
-  border-radius: 20px;
-  border: 2px solid #ffffff;
-  box-shadow: 0 3px 8px #0002;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 8px 4px;
-  text-decoration: none;
-  color: white;
-  transition: transform .2s;
+  min-height:145px;
+  border-radius:24px;
+  border:2px solid #fff;
+  box-shadow:0 4px 9px #0002;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:8px 4px;
+  text-decoration:none;
+  color:white;
+  transition:.2s;
 }
 
 .card:active {
-  transform: scale(.95);
+  transform:scale(.95);
 }
 
 .card .icon {
-  font-size: 43px;
-  margin-bottom: 5px;
-  line-height: 1.3;
+  font-size:47px;
+  margin-bottom:5px;
+  line-height:1.3;
 }
 
-.card span:last-child {
-  font-size: clamp(11px, 2.8vw, 15px);
-  font-weight: bold;
-  line-height: 2;
+.card .name {
+  font-size:clamp(11px,3vw,16px);
+  font-weight:bold;
+  line-height:2;
 }
 
-.blue { background: linear-gradient(145deg,#13b9ff,#002fba); }
-.green { background: linear-gradient(145deg,#83ed48,#00632c); }
-.orange { background: linear-gradient(145deg,#ffdf54,#f05a00); }
-.purple { background: linear-gradient(145deg,#d36aff,#5700a7); }
-.teal { background: linear-gradient(145deg,#00d6b1,#006c62); }
-.red { background: linear-gradient(145deg,#ff5555,#ba0000); }
-.navy { background: linear-gradient(145deg,#248aff,#001b6e); }
-.pink { background: linear-gradient(145deg,#ff91e9,#8b00bd); }
+.blue {background:linear-gradient(145deg,#18c5ff,#002bb0);}
+.green {background:linear-gradient(145deg,#91ef48,#00602a);}
+.orange {background:linear-gradient(145deg,#ffe45b,#f05a00);}
+.purple {background:linear-gradient(145deg,#df7aff,#5900a5);}
+.teal {background:linear-gradient(145deg,#00dfb6,#00685d);}
+.red {background:linear-gradient(145deg,#ff5959,#b90000);}
+.navy {background:linear-gradient(145deg,#278cff,#001b70);}
+.pink {background:linear-gradient(145deg,#ff91e9,#8700bd);}
 
-/* FOOTER */
+.empty {
+  display:none;
+  color:#333;
+  text-align:center;
+  padding:25px;
+  font-size:17px;
+}
+
+/* BOTTOM NAVIGATION */
 .bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 600px;
-  height: 76px;
-  background: #032c80;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 3px solid #f8d94d;
-  z-index: 100;
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:600px;
+  height:82px;
+  background:linear-gradient(90deg,#001d65,#073c9b);
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  border-top:4px solid #ffdf45;
+  z-index:100;
 }
 
 .bottom-nav a {
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  font-size: 12px;
-  line-height: 1.7;
-  border-left: 1px solid #ffffff55;
+  flex:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  line-height:1.7;
+  border-left:1px solid #ffffff55;
 }
 
 .bottom-nav .nav-icon {
-  display: block;
-  font-size: 23px;
+  display:block;
+  font-size:27px;
 }
 
 .bottom-nav a.active {
-  color: #ffeb28;
+  color:#ffed22;
 }
 
-.empty {
-  display: none;
-  color: #444;
-  text-align: center;
-  padding: 25px;
-}
-
-@media(max-width:360px) {
-  .grid { gap: 7px; padding: 7px; }
-  .card { min-height: 115px; }
-  .card .icon { font-size: 35px; }
+@media(max-width:380px) {
+  .grid {gap:7px;padding:7px;}
+  .card {min-height:120px;border-radius:17px;}
+  .card .icon {font-size:36px;}
+  .card .name {font-size:11px;}
+  .header {min-height:310px;}
 }
 </style>
 </head>
@@ -232,96 +262,120 @@ body {
 <div class="app">
 
 <header class="header">
-  <div class="bell">🔔</div>
+
+  <div class="top-buttons">
+    <button class="language" onclick="changeLanguage()" id="languageButton">
+      English
+    </button>
+    <div class="bell">🔔</div>
+  </div>
+
   <div class="logo">🏞️</div>
-  <h1>مردوال سون ویلی</h1>
+
+  <h1 data-ur="مردوال سون ویلی"
+      data-en="Mardwal Soon Valley">
+    مردوال سون ویلی
+  </h1>
+
   <div class="english">Mardwal Soon Valley</div>
-  <div class="slogan">ہماری وادی، ہمارا فخر</div>
+
+  <div class="slogan"
+       data-ur="ہماری وادی، ہمارا فخر"
+       data-en="Our Valley, Our Pride">
+    ہماری وادی، ہمارا فخر
+  </div>
+
 </header>
 
+<!-- SEARCH -->
 <div class="search-area">
   <input id="search" type="search"
   placeholder="تلاش کریں۔۔۔">
   <button onclick="document.getElementById('search').focus()">⌕</button>
 </div>
 
-<h2 class="section-title">خوش آمدید — ہماری خوبصورت وادی</h2>
+<h2 class="section-title"
+    data-ur="خوش آمدید — ہماری خوبصورت وادی"
+    data-en="Welcome — Our Beautiful Valley">
+  خوش آمدید — ہماری خوبصورت وادی
+</h2>
 
+<!-- CATEGORIES -->
 <main class="grid" id="grid">
 
 <a class="card blue" href="#news">
   <span class="icon">📰</span>
-  <span>تازہ ترین خبریں</span>
+  <span class="name" data-ur="تازہ ترین خبریں" data-en="Latest News">تازہ ترین خبریں</span>
 </a>
 
 <a class="card green" href="#islamic">
   <span class="icon">🕌</span>
-  <span>مساجد اور اسلامی خدمات</span>
+  <span class="name" data-ur="مساجد اور اسلامی خدمات" data-en="Mosques & Islamic Services">مساجد اور اسلامی خدمات</span>
 </a>
 
 <a class="card orange" href="#hotels">
   <span class="icon">🏨</span>
-  <span>ہوٹلز اور رہائش</span>
+  <span class="name" data-ur="ہوٹلز اور رہائش" data-en="Hotels & Accommodation">ہوٹلز اور رہائش</span>
 </a>
 
 <a class="card purple" href="#tourism">
   <span class="icon">📸</span>
-  <span>سیاحت اور مقامات</span>
+  <span class="name" data-ur="سیاحت اور مقامات" data-en="Tourism & Places">سیاحت اور مقامات</span>
 </a>
 
 <a class="card teal" href="#shopping">
   <span class="icon">🛒</span>
-  <span>آن لائن خرید و فروخت</span>
+  <span class="name" data-ur="آن لائن خرید و فروخت" data-en="Online Shopping">آن لائن خرید و فروخت</span>
 </a>
 
 <a class="card navy" href="#sports">
   <span class="icon">🏏</span>
-  <span>کھیل اور تفریح</span>
+  <span class="name" data-ur="کھیل اور تفریح" data-en="Sports & Entertainment">کھیل اور تفریح</span>
 </a>
 
 <a class="card red" href="#live">
   <span class="icon">📺</span>
-  <span>لائیو نشریات</span>
+  <span class="name" data-ur="لائیو نشریات" data-en="Live Broadcast">لائیو نشریات</span>
 </a>
 
 <a class="card green" href="#emergency">
   <span class="icon">🚨</span>
-  <span>ایمرجنسی نمبرز</span>
+  <span class="name" data-ur="ایمرجنسی نمبرز" data-en="Emergency Numbers">ایمرجنسی نمبرز</span>
 </a>
 
 <a class="card pink" href="#people">
   <span class="icon">👥</span>
-  <span>اہم شخصیات</span>
+  <span class="name" data-ur="اہم شخصیات" data-en="Important Personalities">اہم شخصیات</span>
 </a>
 
 <a class="card navy" href="#events">
   <span class="icon">📅</span>
-  <span>تقریبات و معلومات</span>
+  <span class="name" data-ur="تقریبات و معلومات" data-en="Events & Information">تقریبات و معلومات</span>
 </a>
 
 <a class="card green" href="#agriculture">
   <span class="icon">🚜</span>
-  <span>زراعت و کاشتکاری</span>
+  <span class="name" data-ur="زراعت و کاشتکاری" data-en="Agriculture & Farming">زراعت و کاشتکاری</span>
 </a>
 
 <a class="card orange" href="#weather">
   <span class="icon">🌤️</span>
-  <span>موسم کی معلومات</span>
+  <span class="name" data-ur="موسم کی معلومات" data-en="Weather Information">موسم کی معلومات</span>
 </a>
 
 <a class="card green" href="#market">
   <span class="icon">🏪</span>
-  <span>خرید و فروخت مارکیٹ</span>
+  <span class="name" data-ur="خرید و فروخت مارکیٹ" data-en="Buy & Sell Market">خرید و فروخت مارکیٹ</span>
 </a>
 
 <a class="card blue" href="#business">
   <span class="icon">💼</span>
-  <span>کاروباری ڈائریکٹری</span>
+  <span class="name" data-ur="کاروباری ڈائریکٹری" data-en="Business Directory">کاروباری ڈائریکٹری</span>
 </a>
 
 <a class="card green" href="#area">
   <span class="icon">📍</span>
-  <span>علاقائی معلومات</span>
+  <span class="name" data-ur="علاقائی معلومات" data-en="Local Information">علاقائی معلومات</span>
 </a>
 
 </main>
@@ -330,48 +384,104 @@ body {
   کوئی نتیجہ نہیں ملا۔
 </div>
 
+<!-- BOTTOM MENU -->
 <nav class="bottom-nav">
-  <a class="active" href="#">
-    <span class="nav-icon">🏠</span>ہوم
-  </a>
-  <a href="#search" onclick="document.getElementById('search').focus()">
-    <span class="nav-icon">🔍</span>تلاش
-  </a>
-  <a href="#live">
-    <span class="nav-icon">▶️</span>لائیو
-  </a>
-  <a href="#profile">
-    <span class="nav-icon">👤</span>پروفائل
-  </a>
-  <a href="#more">
-    <span class="nav-icon">•••</span>مزید
-  </a>
-</nav>
 
+<a class="active" href="#">
+  <span class="nav-icon">🏠</span>
+  <span data-ur="ہوم" data-en="Home">ہوم</span>
+</a>
+
+<a href="#search" onclick="focusSearch(event)">
+  <span class="nav-icon">🔍</span>
+  <span data-ur="تلاش" data-en="Search">تلاش</span>
+</a>
+
+<a href="#live">
+  <span class="nav-icon">▶️</span>
+  <span data-ur="لائیو" data-en="Live">لائیو</span>
+</a>
+
+<a href="#profile">
+  <span class="nav-icon">👤</span>
+  <span data-ur="پروفائل" data-en="Profile">پروفائل</span>
+</a>
+
+<a href="#more">
+  <span class="nav-icon">•••</span>
+  <span data-ur="مزید" data-en="More">مزید</span>
+</a>
+
+</nav>
 </div>
 
 <script>
+let currentLanguage = 'ur';
+
+function changeLanguage() {
+  currentLanguage = currentLanguage === 'ur' ? 'en' : 'ur';
+
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir =
+    currentLanguage === 'ur' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-ur]').forEach(element => {
+    element.textContent = element.dataset[currentLanguage];
+  });
+
+  document.getElementById('languageButton').textContent =
+    currentLanguage === 'ur' ? 'English' : 'اردو';
+
+  document.getElementById('search').placeholder =
+    currentLanguage === 'ur' ? 'تلاش کریں۔۔۔' : 'Search...';
+
+  document.getElementById('empty').textContent =
+    currentLanguage === 'ur'
+      ? 'کوئی نتیجہ نہیں ملا۔'
+      : 'No results found.';
+
+  filterCards();
+}
+
+/* SEARCH IN BOTH LANGUAGES */
 const search = document.getElementById('search');
 const cards = document.querySelectorAll('.card');
 const empty = document.getElementById('empty');
 
-search.addEventListener('input', function() {
-  let query = this.value.trim();
+function filterCards() {
+  const query = search.value.trim().toLowerCase();
   let count = 0;
 
   cards.forEach(card => {
-    let match = card.innerText.includes(query);
+    const ur = card.innerText.toLowerCase();
+    const en = card.querySelector('.name')
+      .dataset.en.toLowerCase();
+
+    const match = !query ||
+      ur.includes(query) || en.includes(query);
+
     card.style.display = match ? 'flex' : 'none';
+
     if(match) count++;
   });
 
   empty.style.display = count === 0 ? 'block' : 'none';
-});
+}
 
+search.addEventListener('input', filterCards);
+
+function focusSearch(event) {
+  event.preventDefault();
+  search.focus();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* BOTTOM MENU ACTIVE */
 document.querySelectorAll('.bottom-nav a').forEach(link => {
   link.addEventListener('click', function() {
     document.querySelectorAll('.bottom-nav a')
       .forEach(a => a.classList.remove('active'));
+
     this.classList.add('active');
   });
 });
