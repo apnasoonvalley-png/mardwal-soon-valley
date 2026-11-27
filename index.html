@@ -3,304 +3,379 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مردوال سون ویلی</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#075b48">
+<title>مردوال سون ویلی | Mardwal Soon Valley</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f2f7f5;
+ color:#18352d;
+ padding-bottom:85px;
 }
-
-body {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  background: #f2f5f8;
-  color: #17344b;
-  padding-bottom: 85px;
+header{
+ background:linear-gradient(135deg,#064e3b,#11966e,#20b58c);
+ color:white;
+ text-align:center;
+ padding:20px 10px;
+ border-radius:0 0 25px 25px;
+ box-shadow:0 4px 12px #0002;
 }
-
-/* چھوٹا ہیڈر */
-.header {
-  height: 245px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 15px 10px;
-  background:
-    linear-gradient(180deg, #168fc4 0%, #7bc5db 48%, #d7e9c5 49%, #438b55 100%);
-  border-radius: 0 0 28px 28px;
+header h1{font-size:25px;margin:5px}
+header p{margin:5px;font-size:14px}
+.hero{
+ margin:14px;
+ min-height:190px;
+ border-radius:20px;
+ background:
+ linear-gradient(#0005,#0007),
+ url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85')
+ center/cover;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ color:white;
+ padding:20px;
 }
-
-.header:before {
-  content: "🏔️";
-  position: absolute;
-  font-size: 115px;
-  bottom: 35px;
-  right: 0;
-  opacity: .65;
+.hero h2{font-size:25px;text-shadow:1px 2px 5px black}
+.welcome{text-align:center;padding:8px 15px}
+.welcome h2{color:#07805c}
+.search{
+ width:92%;
+ display:block;
+ margin:15px auto;
+ padding:14px;
+ border:1px solid #b7d5c8;
+ border-radius:14px;
+ font-size:16px;
+ background:white;
+ outline:none;
 }
-
-.header:after {
-  content: "🏞️";
-  position: absolute;
-  font-size: 105px;
-  bottom: 28px;
-  left: 0;
-  opacity: .8;
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:11px;
+ padding:12px;
 }
-
-.brand {
-  position: relative;
-  z-index: 2;
+.tile{
+ min-height:112px;
+ border-radius:17px;
+ color:white;
+ text-decoration:none;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ gap:9px;
+ padding:10px 4px;
+ font-weight:bold;
+ font-size:13px;
+ box-shadow:0 4px 10px #0002;
+ cursor:pointer;
+ border:0;
 }
-
-.logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: white;
-  border: 3px solid #f5d46b;
-  margin: 0 auto 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #147b50;
-  font-size: 27px;
-  font-weight: bold;
+.tile:active{transform:scale(.96)}
+.ico{font-size:30px}
+.c1{background:linear-gradient(135deg,#15966b,#20c997)}
+.c2{background:linear-gradient(135deg,#1676bd,#45b5e9)}
+.c3{background:linear-gradient(135deg,#d17b19,#f4b942)}
+.c4{background:linear-gradient(135deg,#7544a8,#ad76df)}
+.c5{background:linear-gradient(135deg,#c73e59,#f47788)}
+.c6{background:linear-gradient(135deg,#087f91,#27beca)}
+.c7{background:linear-gradient(135deg,#467c2d,#8ebd48)}
+.c8{background:linear-gradient(135deg,#b85c2b,#ed9b55)}
+.c9{background:linear-gradient(135deg,#315c9b,#648fce)}
+.c10{background:linear-gradient(135deg,#934d8c,#d18ac8)}
+.c11{background:linear-gradient(135deg,#247e70,#56b7a1)}
+.c12{background:linear-gradient(135deg,#627c35,#a6bd54)}
+.c13{background:linear-gradient(135deg,#bd5147,#e58a71)}
+.c14{background:linear-gradient(135deg,#405c88,#829dc7)}
+.c15{background:linear-gradient(135deg,#08734e,#24a879)}
+.notice{
+ margin:13px;
+ padding:15px;
+ background:#e0f3e9;
+ border-radius:15px;
+ text-align:center;
+ line-height:1.9;
+ font-size:14px;
 }
-
-.brand h1 {
-  font-size: 25px;
-  line-height: 1.8;
-  text-shadow: 1px 2px 4px #234;
+footer{
+ text-align:center;
+ padding:20px 10px;
+ color:#557168;
+ font-size:13px;
 }
-
-.brand p {
-  font-size: 13px;
-  direction: ltr;
+.bottom{
+ position:fixed;
+ bottom:0;
+ left:0;
+ right:0;
+ background:white;
+ display:flex;
+ justify-content:space-around;
+ padding:9px 2px calc(9px + env(safe-area-inset-bottom));
+ box-shadow:0 -3px 14px #0002;
+ z-index:5;
 }
-
-.slogan {
-  position: relative;
-  z-index: 2;
-  margin-top: 4px;
-  color: #eaffd8;
-  font-size: 15px;
-  font-weight: bold;
+.bottom a{
+ flex:1;
+ text-align:center;
+ text-decoration:none;
+ color:#31564a;
+ font-size:11px;
+ font-weight:bold;
 }
-
-/* سرچ */
-.search-area {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  gap: 7px;
-  margin: 13px auto 0;
-  max-width: 420px;
+.bottom b{
+ display:block;
+ font-size:23px;
+ margin-bottom:3px;
 }
-
-.search-area input {
-  flex: 1;
-  min-width: 0;
-  padding: 9px 12px;
-  border: none;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 13px;
-  outline: none;
+.modal{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:#0009;
+ z-index:10;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
 }
-
-.search-area button {
-  border: none;
-  border-radius: 10px;
-  padding: 5px 13px;
-  background: #075c91;
-  color: white;
-  font-family: inherit;
+.modalbox{
+ background:white;
+ border-radius:20px;
+ padding:23px;
+ text-align:center;
+ width:100%;
+ max-width:360px;
+ line-height:1.9;
+ box-shadow:0 8px 30px #0003;
 }
-
-/* کیٹیگریز */
-.section-title {
-  text-align: center;
-  margin: 18px 0 12px;
-  font-size: 19px;
-  color: #075c91;
+.modalbox h3{color:#087653}
+.close{
+ background:#087653;
+ color:white;
+ border:0;
+ padding:11px 30px;
+ border-radius:12px;
+ font-size:15px;
 }
-
-.categories {
-  padding: 0 12px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+.empty{
+ grid-column:1/-1;
+ text-align:center;
+ padding:25px;
+ color:#777;
 }
-
-.card {
-  min-height: 105px;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 3px 10px #00000012;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  text-align: center;
-  padding: 9px 3px;
-  border-bottom: 3px solid #2495a5;
-  transition: .2s;
-}
-
-.card:active {
-  transform: scale(.96);
-}
-
-.card .emoji {
-  font-size: 29px;
-}
-
-.card span:last-child {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.card:nth-child(3n+1) { border-color: #159b68; }
-.card:nth-child(3n+2) { border-color: #e4a12b; }
-.card:nth-child(3n+3) { border-color: #488bd5; }
-
-.no-result {
-  display: none;
-  text-align: center;
-  padding: 20px;
-  color: #777;
-}
-
-/* نیچے مینیو */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 69px;
-  background: #075b91;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 10;
-  box-shadow: 0 -3px 12px #0002;
-}
-
-.nav-item {
-  color: white;
-  text-align: center;
-  font-family: inherit;
-  font-size: 11px;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-.nav-item .emoji {
-  display: block;
-  font-size: 22px;
-  margin-bottom: 1px;
-}
-
-.nav-item.active {
-  color: #ffe17b;
-}
-
-@media (max-width: 360px) {
-  .categories { gap: 8px; padding: 0 8px; }
-  .card { min-height: 95px; }
-  .brand h1 { font-size: 22px; }
+@media(max-width:360px){
+ .grid{gap:7px;padding:8px}
+ .tile{min-height:100px;font-size:12px}
+ .ico{font-size:26px}
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="brand">
-    <div class="logo">م</div>
-    <h1>مردوال سون ویلی</h1>
-    <p>MARDWAL SOON VALLEY</p>
-    <div class="slogan">ہماری وادی — ہماری پہچان</div>
-  </div>
-
-  <div class="search-area">
-    <input type="search" id="search"
-    placeholder="اپنی پسند کی چیز تلاش کریں...">
-    <button onclick="searchCards()">تلاش</button>
-  </div>
+<header>
+ <h1>مردوال سون ویلی</h1>
+ <p>Mardwal Soon Valley</p>
+ <p>وادیٔ سون کی خوبصورتی، ثقافت اور معلومات</p>
 </header>
 
-<h2 class="section-title">ہماری وادی کی خدمات</h2>
+<section class="hero">
+ <div>
+  <h2>خوش آمدید وادیٔ سون میں</h2>
+  <p>قدرتی حسن، پہاڑوں اور جھیلوں کی حسین سرزمین</p>
+ </div>
+</section>
 
-<main class="categories" id="categories">
+<section class="welcome">
+ <h2>ہماری خوبصورت وادی</h2>
+ <p>وادیٔ سون کے سیاحتی مقامات، خبریں، کاروبار اور مقامی معلومات ایک ہی جگہ۔</p>
+</section>
 
-  <div class="card"><span class="emoji">📰</span><span>تازہ خبریں</span></div>
-  <div class="card"><span class="emoji">🕌</span><span>اسلامی معلومات</span></div>
-  <div class="card"><span class="emoji">🏨</span><span>ہوٹل اور رہائش</span></div>
+<input class="search" id="search"
+ placeholder="اپنی مطلوبہ سہولت تلاش کریں..."
+ aria-label="سہولت تلاش کریں">
 
-  <div class="card"><span class="emoji">🏞️</span><span>سیاحتی مقامات</span></div>
-  <div class="card"><span class="emoji">🛍️</span><span>خریداری</span></div>
-  <div class="card"><span class="emoji">⚽</span><span>کھیل</span></div>
+<main class="grid" id="grid">
 
-  <div class="card"><span class="emoji">📺</span><span>لائیو نشریات</span></div>
-  <div class="card"><span class="emoji">🚑</span><span>ایمرجنسی</span></div>
-  <div class="card"><span class="emoji">👥</span><span>اہلِ علاقہ</span></div>
+<div class="tile c1" data-key="tourism" onclick="showInfo('tourism')">
+ <span class="ico">🏞️</span><span>سیاحتی مقامات</span>
+</div>
 
-  <div class="card"><span class="emoji">🎉</span><span>تقریبات</span></div>
-  <div class="card"><span class="emoji">🌾</span><span>زراعت</span></div>
-  <div class="card"><span class="emoji">🌤️</span><span>موسم</span></div>
+<div class="tile c2" data-key="hotels" onclick="showInfo('hotels')">
+ <span class="ico">🏨</span><span>ہوٹلز اور رہائش</span>
+</div>
 
-  <div class="card"><span class="emoji">🏪</span><span>بازار</span></div>
-  <div class="card"><span class="emoji">📇</span><span>کاروباری ڈائریکٹری</span></div>
-  <div class="card"><span class="emoji">📍</span><span>علاقے کی معلومات</span></div>
+<div class="tile c3" data-key="food" onclick="showInfo('food')">
+ <span class="ico">🍽️</span><span>ریسٹورنٹس</span>
+</div>
+
+<div class="tile c4" data-key="market" onclick="showInfo('market')">
+ <span class="ico">🛍️</span><span>خرید و فروخت</span>
+</div>
+
+<div class="tile c5" data-key="events" onclick="showInfo('events')">
+ <span class="ico">🎉</span><span>تقریبات</span>
+</div>
+
+<div class="tile c6" data-key="live" onclick="showInfo('live')">
+ <span class="ico">📺</span><span>لائیو نشریات</span>
+</div>
+
+<div class="tile c7" data-key="news" onclick="showInfo('news')">
+ <span class="ico">📰</span><span>تازہ خبریں</span>
+</div>
+
+<div class="tile c8" data-key="gallery" onclick="showInfo('gallery')">
+ <span class="ico">📸</span><span>تصاویر اور ویڈیوز</span>
+</div>
+
+<div class="tile c9" data-key="jobs" onclick="showInfo('jobs')">
+ <span class="ico">💼</span><span>ملازمتیں</span>
+</div>
+
+<div class="tile c10" data-key="transport" onclick="showInfo('transport')">
+ <span class="ico">🚗</span><span>ٹرانسپورٹ</span>
+</div>
+
+<div class="tile c11" data-key="services" onclick="showInfo('services')">
+ <span class="ico">🔧</span><span>مقامی خدمات</span>
+</div>
+
+<div class="tile c12" data-key="weather" onclick="showInfo('weather')">
+ <span class="ico">🌤️</span><span>موسم</span>
+</div>
+
+<div class="tile c13" data-key="community" onclick="showInfo('community')">
+ <span class="ico">🤝</span><span>کمیونٹی</span>
+</div>
+
+<div class="tile c14" data-key="about" onclick="showInfo('about')">
+ <span class="ico">ℹ️</span><span>ہمارے بارے میں</span>
+</div>
+
+<div class="tile c15" data-key="contact" onclick="showInfo('contact')">
+ <span class="ico">📞</span><span>رابطہ کریں</span>
+</div>
 
 </main>
 
-<div class="no-result" id="noResult">
-  مطلوبہ معلومات نہیں ملیں۔
+<div class="notice">
+ <strong>اہم اطلاع</strong><br>
+ خرید و فروخت کے تمام اشتہارات انتظامیہ کی منظوری کے بعد شائع ہوں گے۔
+ لائیو نشریات صرف ایڈمن یا منظور شدہ منتظمین شروع کر سکیں گے۔
 </div>
 
-<nav class="bottom-nav">
-  <button class="nav-item active"><span class="emoji">🏠</span>ہوم</button>
-  <button class="nav-item"><span class="emoji">🔍</span>تلاش</button>
-  <button class="nav-item"><span class="emoji">📡</span>لائیو</button>
-  <button class="nav-item"><span class="emoji">👤</span>پروفائل</button>
-  <button class="nav-item"><span class="emoji">☰</span>مزید</button>
+<footer>
+ <strong>مردوال سون ویلی</strong><br>
+ Mardwal Soon Valley<br>
+ وادیٔ سون کی خدمت کے لیے ایک ڈیجیٹل پلیٹ فارم
+</footer>
+
+<nav class="bottom">
+ <a href="#" onclick="goHome(event)">
+  <b>🏠</b>ہوم
+ </a>
+ <a href="#grid">
+  <b>🧭</b>سہولیات
+ </a>
+ <a href="#" onclick="navInfo(event,'events')">
+  <b>📅</b>تقریبات
+ </a>
+ <a href="#" onclick="navInfo(event,'gallery')">
+  <b>📷</b>تصاویر
+ </a>
+ <a href="#" onclick="navInfo(event,'contact')">
+  <b>☎️</b>رابطہ
+ </a>
 </nav>
 
+<div class="modal" id="modal" onclick="outsideClose(event)">
+ <div class="modalbox">
+  <h3 id="modalTitle">معلومات</h3>
+  <p id="modalText"></p>
+  <button class="close" onclick="closeInfo()">بند کریں</button>
+ </div>
+</div>
+
 <script>
-function searchCards() {
-  const value = document.getElementById("search").value.trim();
-  const cards = document.querySelectorAll(".card");
-  let found = 0;
+"use strict";
 
-  cards.forEach(card => {
-    const match = card.innerText.includes(value);
-    card.style.display = match ? "flex" : "none";
-    if (match) found++;
-  });
+const info = {
+ tourism:["سیاحتی مقامات","وادیٔ سون کے خوبصورت پہاڑوں، جھیلوں، آبشاروں اور تاریخی مقامات کی معلومات یہاں فراہم کی جائیں گی۔"],
+ hotels:["ہوٹلز اور رہائش","وادیٔ سون کے ہوٹلز، رہائش اور بکنگ کی معلومات یہاں دستیاب ہوں گی۔"],
+ food:["ریسٹورنٹس","مقامی کھانوں، ریسٹورنٹس اور کھانے پینے کی جگہوں کی معلومات۔"],
+ market:["خرید و فروخت","اپنی اشیا کی خرید و فروخت کے اشتہارات جمع کروائیں۔ ہر اشتہار ایڈمن کی منظوری کے بعد شائع ہوگا۔"],
+ events:["تقریبات","وادیٔ سون کی تقریبات، میلوں اور اہم پروگراموں کی معلومات۔"],
+ live:["لائیو نشریات","ایڈمن اور منظور شدہ منتظمین کی لائیو نشریات یہاں دیکھی جا سکیں گی۔"],
+ news:["تازہ خبریں","وادیٔ سون کی مقامی اور اہم خبریں یہاں شائع ہوں گی۔"],
+ gallery:["تصاویر اور ویڈیوز","وادیٔ سون کے خوبصورت مناظر اور یادگار تصاویر و ویڈیوز۔"],
+ jobs:["ملازمتیں","مقامی ملازمتوں اور روزگار کے مواقع کی معلومات۔"],
+ transport:["ٹرانسپورٹ","سفر اور ٹرانسپورٹ کی سہولیات کی معلومات۔"],
+ services:["مقامی خدمات","مقامی کاروبار، کاریگروں اور خدمات فراہم کرنے والوں کی معلومات۔"],
+ weather:["موسم","وادیٔ سون کے موسم سے متعلق معلومات یہاں فراہم کی جائیں گی۔"],
+ community:["کمیونٹی","علاقے کے لوگوں کے لیے رابطے اور باہمی تعاون کا پلیٹ فارم۔"],
+ about:["ہمارے بارے میں","مردوال سون ویلی وادیٔ سون کی معلومات، ثقافت اور تشہیر کے لیے ایک ڈیجیٹل پلیٹ فارم ہے۔"],
+ contact:["رابطہ کریں","رابطے کی تفصیلات جلد شامل کی جائیں گی۔"]
+};
 
-  document.getElementById("noResult").style.display =
-    found ? "none" : "block";
+function showInfo(key){
+ const item=info[key];
+ if(!item)return;
+ document.getElementById("modalTitle").textContent=item[0];
+ document.getElementById("modalText").textContent=item[1];
+ document.getElementById("modal").style.display="flex";
 }
 
-document.getElementById("search").addEventListener("input", searchCards);
+function closeInfo(){
+ document.getElementById("modal").style.display="none";
+}
 
-document.querySelectorAll(".nav-item").forEach(item => {
-  item.addEventListener("click", () => {
-    document.querySelectorAll(".nav-item").forEach(btn =>
-      btn.classList.remove("active")
-    );
-    item.classList.add("active");
-  });
+function outsideClose(event){
+ if(event.target.id==="modal")closeInfo();
+}
+
+function navInfo(event,key){
+ event.preventDefault();
+ showInfo(key);
+}
+
+function goHome(event){
+ event.preventDefault();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.getElementById("search").addEventListener("input",function(){
+ const query=this.value.trim().toLowerCase();
+ let count=0;
+ document.querySelectorAll(".tile").forEach(tile=>{
+  const match=tile.textContent.toLowerCase().includes(query);
+  tile.style.display=match?"flex":"none";
+  if(match)count++;
+ });
+ let empty=document.getElementById("empty");
+ if(!count){
+  if(!empty){
+   empty=document.createElement("div");
+   empty.id="empty";
+   empty.className="empty";
+   empty.textContent="کوئی سہولت نہیں ملی۔ دوبارہ تلاش کریں۔";
+   document.getElementById("grid").appendChild(empty);
+  }
+ }else if(empty){
+  empty.remove();
+ }
+});
+
+document.addEventListener("keydown",function(event){
+ if(event.key==="Escape")closeInfo();
 });
 </script>
 
