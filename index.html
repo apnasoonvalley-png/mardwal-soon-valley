@@ -1,233 +1,381 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#123d32">
-  <meta name="description" content="مردوال سون ویلی — وادیٔ سون کی سیاحت، ثقافت، کاروبار اور خبریں">
-  <link rel="manifest" href="./manifest.json">
-  <title>مردوال سون ویلی | Mardwal Soon Valley</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --green:#123d32;--green2:#1b6b50;--gold:#f5bd45;--cream:#fffaf0;
-      --ink:#19352e;--muted:#66756f;--white:#fff;--shadow:0 12px 35px #123d3218;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{margin:0;background:#f5f8f5;color:var(--ink);font-family:"Noto Nastaliq Urdu",serif;line-height:2}
-    body.english{font-family:"Poppins",sans-serif;line-height:1.7}
-    a{color:inherit}
-    .topbar{background:var(--green);color:#fff;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px}
-    .topbar span{opacity:.95}
-    .language{border:1px solid #ffffff70;background:#ffffff18;color:#fff;border-radius:30px;padding:7px 16px;font-weight:700;cursor:pointer;font-family:inherit}
-    header{background:linear-gradient(120deg,#123d32,#207454);color:#fff;padding:18px 5% 24px;text-align:center;position:relative;overflow:hidden}
-    header:before,header:after{content:"";position:absolute;border-radius:50%;background:#ffffff0d}
-    header:before{width:230px;height:230px;top:-130px;right:-45px}
-    header:after{width:180px;height:180px;bottom:-125px;left:-35px}
-    .brand{position:relative;z-index:1}
-    .brand-en{font:800 clamp(24px,5vw,39px)/1.2 "Poppins",sans-serif;letter-spacing:.2px;margin:0}
-    .brand-ur{font-size:clamp(22px,4vw,30px);font-weight:700;margin:5px 0 0}
-    .tagline{margin:5px 0 0;color:#f9e8bd;font-size:14px}
-    nav{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 5px 20px #102e2512;padding:10px 4%;display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
-    nav a{color:#fff;text-decoration:none;padding:7px 14px;border-radius:24px;font-size:13px;font-weight:700;white-space:nowrap;transition:.2s}
-    nav a:hover{transform:translateY(-2px);filter:brightness(1.08)}
-    .n-home{background:#247b59}.n-tour{background:#168aad}.n-hotel{background:#8b5cf6}.n-market{background:#e58a23}.n-live{background:#dc4262}.n-news{background:#3b82a0}
-    .hero{min-height:440px;padding:65px 6%;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(110deg,#061e1bbd,#061e1b50),url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85") center/cover}
-    .hero-inner{max-width:780px}
-    .eyebrow{display:inline-block;background:#f5bd45;color:#243d31;padding:4px 16px;border-radius:30px;font-size:13px;font-weight:700}
-    .hero h2{font-size:clamp(27px,5vw,47px);line-height:1.65;margin:16px 0 8px;text-shadow:0 3px 12px #0008}
-    .hero p{font-size:17px;margin:0 auto 22px;color:#fff9e9}
-    .button{display:inline-block;background:var(--gold);color:#253d31;text-decoration:none;border:0;border-radius:30px;padding:10px 23px;font-weight:800;font-family:inherit;font-size:14px;cursor:pointer}
-    .button.secondary{background:#fff;color:var(--green);margin-inline-start:8px}
-    .quick{max-width:1100px;margin:-30px auto 0;position:relative;z-index:2;padding:0 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .quick a{background:#fff;border-radius:16px;padding:15px 10px;text-align:center;text-decoration:none;box-shadow:var(--shadow);font-weight:700}
-    .quick .emoji{display:block;font-size:27px;line-height:1.5}
-    section{padding:55px 5%}
-    .section-head{text-align:center;margin:0 auto 27px;max-width:760px}
-    .section-head .kicker{color:#d18a1e;font-size:13px;font-weight:700}
-    .section-head h2{font-size:clamp(22px,4vw,31px);color:var(--green);margin:4px 0 7px}
-    .section-head p{color:var(--muted);margin:0;font-size:14px}
-    .cards{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
-    .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s}
-    .card:hover{transform:translateY(-4px)}
-    .card img{width:100%;height:190px;object-fit:cover;display:block}
-    .card-body{padding:17px}
-    .card h3{margin:0 0 7px;color:var(--green);font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:13px;line-height:2}
-    .pill{display:inline-block;margin-top:12px;padding:3px 11px;border-radius:20px;background:#e9f5ee;color:#23734e;font-size:11px;font-weight:700}
-    .soft{background:#eaf3ed}
-    .feature-grid{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .feature{border-radius:18px;padding:24px;background:#fff;box-shadow:var(--shadow);display:flex;gap:15px;align-items:flex-start}
-    .feature-icon{width:52px;height:52px;flex:0 0 52px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:#f0eaff}
-    .feature h3{margin:0 0 5px;color:var(--green);font-size:18px}
-    .feature p{margin:0;color:var(--muted);font-size:13px}
-    .notice{max-width:900px;margin:auto;background:linear-gradient(120deg,#123d32,#267553);color:#fff;padding:28px;border-radius:20px;text-align:center;box-shadow:var(--shadow)}
-    .notice h3{font-size:22px;margin:0 0 8px}
-    .notice p{margin:0;color:#f3f5ed;font-size:14px}
-    .notice .button{margin-top:15px}
-    .news-placeholder{max-width:900px;margin:auto;text-align:center;background:#fff;border:1px dashed #9bb9a7;padding:25px;border-radius:18px;color:var(--muted)}
-    footer{background:#102f28;color:#fff;text-align:center;padding:30px 5%;margin-top:25px}
-    footer strong{font-size:20px}
-    footer p{margin:5px 0;color:#dce8df;font-size:13px}
-    .copyright{margin-top:14px;color:#a9c0b2;font:12px "Poppins",sans-serif}
-    @media(max-width:760px){
-      .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .quick{grid-template-columns:repeat(2,1fr)}
-      .hero{min-height:390px;padding:50px 5%}
-      nav{gap:6px;padding:9px 2%}
-      nav a{padding:6px 10px;font-size:12px}
-    }
-    @media(max-width:520px){
-      .cards,.feature-grid{grid-template-columns:1fr}
-      .card img{height:205px}
-      section{padding:42px 16px}
-      .topbar{font-size:11px}
-      .hero p{font-size:14px}
-      .feature{padding:18px}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073b91">
+<title>مردوال سون ویلی</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eaf3f9;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  color: #fff;
+  padding-bottom: 85px;
+}
+
+.app {
+  max-width: 600px;
+  margin: auto;
+  min-height: 100vh;
+  background: white;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  min-height: 270px;
+  padding: 20px 14px;
+  background:
+    linear-gradient(180deg, rgba(0,30,100,.35), rgba(0,35,90,.45)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')
+    center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.logo {
+  width: 95px;
+  height: 95px;
+  margin: 5px auto 8px;
+  border-radius: 50%;
+  border: 4px solid #ffdf53;
+  background: linear-gradient(145deg,#0b6c39,#003b23);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 43px;
+  box-shadow: 0 3px 15px #0008;
+}
+
+.bell {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-size: 28px;
+}
+
+.header h1 {
+  font-size: clamp(25px, 7vw, 38px);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 3px 5px #000;
+  line-height: 2;
+}
+
+.english {
+  direction: ltr;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+  text-shadow: 2px 2px 5px #001d66;
+}
+
+.slogan {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 22px;
+  background: #08783b;
+  border: 2px solid #ffe36a;
+  border-radius: 30px;
+  font-size: 17px;
+}
+
+/* SEARCH */
+.search-area {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: #f5f8fc;
+}
+
+.search-area input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #b9c7d8;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-area button {
+  width: 55px;
+  border: none;
+  border-radius: 13px;
+  background: #063d9d;
+  color: white;
+  font-size: 26px;
+}
+
+/* SECTION */
+.section-title {
+  text-align: center;
+  color: #073b91;
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  padding: 10px;
+}
+
+.card {
+  min-height: 130px;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 8px #0002;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: white;
+  transition: transform .2s;
+}
+
+.card:active {
+  transform: scale(.95);
+}
+
+.card .icon {
+  font-size: 43px;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.card span:last-child {
+  font-size: clamp(11px, 2.8vw, 15px);
+  font-weight: bold;
+  line-height: 2;
+}
+
+.blue { background: linear-gradient(145deg,#13b9ff,#002fba); }
+.green { background: linear-gradient(145deg,#83ed48,#00632c); }
+.orange { background: linear-gradient(145deg,#ffdf54,#f05a00); }
+.purple { background: linear-gradient(145deg,#d36aff,#5700a7); }
+.teal { background: linear-gradient(145deg,#00d6b1,#006c62); }
+.red { background: linear-gradient(145deg,#ff5555,#ba0000); }
+.navy { background: linear-gradient(145deg,#248aff,#001b6e); }
+.pink { background: linear-gradient(145deg,#ff91e9,#8b00bd); }
+
+/* FOOTER */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  height: 76px;
+  background: #032c80;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 3px solid #f8d94d;
+  z-index: 100;
+}
+
+.bottom-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  line-height: 1.7;
+  border-left: 1px solid #ffffff55;
+}
+
+.bottom-nav .nav-icon {
+  display: block;
+  font-size: 23px;
+}
+
+.bottom-nav a.active {
+  color: #ffeb28;
+}
+
+.empty {
+  display: none;
+  color: #444;
+  text-align: center;
+  padding: 25px;
+}
+
+@media(max-width:360px) {
+  .grid { gap: 7px; padding: 7px; }
+  .card { min-height: 115px; }
+  .card .icon { font-size: 35px; }
+}
+</style>
 </head>
+
 <body>
-  <div class="topbar">
-    <span data-ur="وادیٔ سون کی اپنی ڈیجیٹل پہچان" data-en="Your digital guide to Soon Valley">وادیٔ سون کی اپنی ڈیجیٹل پہچان</span>
-    <button class="language" type="button" onclick="changeLang()" aria-label="Change language">English</button>
-  </div>
+<div class="app">
 
-  <header>
-    <div class="brand">
-      <h1 class="brand-en">Mardwal Soon Valley</h1>
-      <p class="brand-ur">مردوال سون ویلی</p>
-      <p class="tagline" data-ur="قدرت • ثقافت • سیاحت • کمیونٹی" data-en="Nature • Culture • Tourism • Community">قدرت • ثقافت • سیاحت • کمیونٹی</p>
-    </div>
-  </header>
+<header class="header">
+  <div class="bell">🔔</div>
+  <div class="logo">🏞️</div>
+  <h1>مردوال سون ویلی</h1>
+  <div class="english">Mardwal Soon Valley</div>
+  <div class="slogan">ہماری وادی، ہمارا فخر</div>
+</header>
 
-  <nav aria-label="Main navigation">
-    <a class="n-home" href="#home" data-ur="⌂ ہوم" data-en="⌂ Home">⌂ ہوم</a>
-    <a class="n-tour" href="#places" data-ur="🏞 سیاحت" data-en="🏞 Tourism">🏞 سیاحت</a>
-    <a class="n-hotel" href="#hotels" data-ur="🏨 ہوٹلز" data-en="🏨 Hotels">🏨 ہوٹلز</a>
-    <a class="n-market" href="#market" data-ur="🛍 خرید و فروخت" data-en="🛍 Marketplace">🛍 خرید و فروخت</a>
-    <a class="n-live" href="#live" data-ur="🔴 لائیو" data-en="🔴 Live">🔴 لائیو</a>
-    <a class="n-news" href="#news" data-ur="📰 خبریں" data-en="📰 News">📰 خبریں</a>
-  </nav>
+<div class="search-area">
+  <input id="search" type="search"
+  placeholder="تلاش کریں۔۔۔">
+  <button onclick="document.getElementById('search').focus()">⌕</button>
+</div>
 
-  <main>
-    <div class="hero" id="home">
-      <div class="hero-inner">
-        <span class="eyebrow" data-ur="خوش آمدید" data-en="WELCOME">خوش آمدید</span>
-        <h2 data-ur="وادیٔ سون کی خوبصورتی، اب ایک جگہ" data-en="Discover the beauty of Soon Valley">وادیٔ سون کی خوبصورتی، اب ایک جگہ</h2>
-        <p data-ur="قدرتی مناظر، سیاحتی مقامات، مقامی کاروبار اور ہماری کمیونٹی سے جڑیے۔" data-en="Explore scenic places, local businesses and the community of Soon Valley.">قدرتی مناظر، سیاحتی مقامات، مقامی کاروبار اور ہماری کمیونٹی سے جڑیے۔</p>
-        <a class="button" href="#places" data-ur="وادیٔ سون دریافت کریں" data-en="Explore the Valley">وادیٔ سون دریافت کریں</a>
-        <a class="button secondary" href="#hotels" data-ur="رہائش دیکھیں" data-en="Find a stay">رہائش دیکھیں</a>
-      </div>
-    </div>
+<h2 class="section-title">خوش آمدید — ہماری خوبصورت وادی</h2>
 
-    <div class="quick">
-      <a href="#places"><span class="emoji">🏞️</span><span data-ur="سیاحتی مقامات" data-en="Places to visit">سیاحتی مقامات</span></a>
-      <a href="#hotels"><span class="emoji">🏨</span><span data-ur="ہوٹلز اور ریسٹورنٹس" data-en="Hotels & restaurants">ہوٹلز اور ریسٹورنٹس</span></a>
-      <a href="#market"><span class="emoji">🛍️</span><span data-ur="آن لائن بازار" data-en="Online marketplace">آن لائن بازار</span></a>
-      <a href="#live"><span class="emoji">📡</span><span data-ur="لائیو تقریبات" data-en="Live events">لائیو تقریبات</span></a>
-    </div>
+<main class="grid" id="grid">
 
-    <section id="places">
-      <div class="section-head">
-        <span class="kicker" data-ur="قدرت کے رنگ" data-en="NATURE'S BEAUTY">قدرت کے رنگ</span>
-        <h2 data-ur="وادیٔ سون کے خوبصورت مقامات" data-en="Beautiful places of Soon Valley">وادیٔ سون کے خوبصورت مقامات</h2>
-        <p data-ur="وادی کے دلکش مناظر اور مشہور مقامات دریافت کریں۔" data-en="Discover the valley's scenic views and well-known destinations.">وادی کے دلکش مناظر اور مشہور مقامات دریافت کریں۔</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="Lake and mountains">
-          <div class="card-body"><h3 data-ur="اوچھالی جھیل" data-en="Uchhali Lake">اوچھالی جھیل</h3><p data-ur="وادیٔ سون کی معروف نمکین جھیل اور قدرتی حسن کا دلکش منظر۔" data-en="A well-known saltwater lake and a scenic highlight of Soon Valley.">وادیٔ سون کی معروف نمکین جھیل اور قدرتی حسن کا دلکش منظر۔</p><span class="pill" data-ur="قدرتی مقام" data-en="Nature">قدرتی مقام</span></div>
-        </article>
-        <article class="card">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape">
-          <div class="card-body"><h3 data-ur="سکیسر" data-en="Sakesar">سکیسر</h3><p data-ur="وادیٔ سون کی بلند چوٹی، جہاں سے دلکش پہاڑی مناظر دکھائی دیتے ہیں۔" data-en="The valley's prominent peak, known for its beautiful mountain views.">وادیٔ سون کی بلند چوٹی، جہاں سے دلکش پہاڑی مناظر دکھائی دیتے ہیں۔</p><span class="pill" data-ur="پہاڑی مقام" data-en="Mountain">پہاڑی مقام</span></div>
-        </article>
-        <article class="card">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Green nature">
-          <div class="card-body"><h3 data-ur="وادیٔ سون" data-en="Soon Valley">وادیٔ سون</h3><p data-ur="قدرتی حسن، دیہی زندگی اور مقامی ثقافت سے مالا مال خطہ۔" data-en="A region rich in natural beauty, rural life and local culture.">قدرتی حسن، دیہی زندگی اور مقامی ثقافت سے مالا مال خطہ۔</p><span class="pill" data-ur="ثقافت اور فطرت" data-en="Culture & nature">ثقافت اور فطرت</span></div>
-        </article>
-      </div>
-    </section>
+<a class="card blue" href="#news">
+  <span class="icon">📰</span>
+  <span>تازہ ترین خبریں</span>
+</a>
 
-    <section class="soft" id="hotels">
-      <div class="section-head">
-        <span class="kicker" data-ur="مہمان نوازی" data-en="HOSPITALITY">مہمان نوازی</span>
-        <h2 data-ur="ہوٹلز اور ریسٹورنٹس" data-en="Hotels & Restaurants">ہوٹلز اور ریسٹورنٹس</h2>
-        <p data-ur="رہائش اور کھانے پینے کی جگہوں کی معلومات یہاں شامل کی جائیں گی۔" data-en="Information about local stays and places to eat will be listed here.">رہائش اور کھانے پینے کی جگہوں کی معلومات یہاں شامل کی جائیں گی۔</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature"><div class="feature-icon">🏨</div><div><h3 data-ur="ہوٹل ڈائریکٹری" data-en="Hotel directory">ہوٹل ڈائریکٹری</h3><p data-ur="ہوٹلز کے پتے، رابطہ نمبرز، سہولیات اور بکنگ کی معلومات۔" data-en="Hotel addresses, contact numbers, facilities and booking information.">ہوٹلز کے پتے، رابطہ نمبرز، سہولیات اور بکنگ کی معلومات۔</p></div></div>
-        <div class="feature"><div class="feature-icon">🍽️</div><div><h3 data-ur="ریسٹورنٹس" data-en="Restaurants">ریسٹورنٹس</h3><p data-ur="مقامی کھانوں، ریسٹورنٹس اور ان کے اوقات کی تفصیلات۔" data-en="Details of local food, restaurants and their opening hours.">مقامی کھانوں، ریسٹورنٹس اور ان کے اوقات کی تفصیلات۔</p></div></div>
-      </div>
-    </section>
+<a class="card green" href="#islamic">
+  <span class="icon">🕌</span>
+  <span>مساجد اور اسلامی خدمات</span>
+</a>
 
-    <section id="market">
-      <div class="section-head">
-        <span class="kicker" data-ur="مقامی کاروبار" data-en="LOCAL BUSINESS">مقامی کاروبار</span>
-        <h2 data-ur="آن لائن خرید و فروخت" data-en="Online Marketplace">آن لائن خرید و فروخت</h2>
-        <p data-ur="مقامی لوگوں کے لیے اشیاء خریدنے اور فروخت کرنے کا مجوزہ پلیٹ فارم۔" data-en="A planned marketplace for people to buy and sell locally.">مقامی لوگوں کے لیے اشیاء خریدنے اور فروخت کرنے کا مجوزہ پلیٹ فارم۔</p>
-      </div>
-      <div class="notice">
-        <h3 data-ur="اپنی چیز فروخت کریں" data-en="Sell your items">اپنی چیز فروخت کریں</h3>
-        <p data-ur="اشتہار کی تفصیلات جمع کرانے کے بعد ایڈمن کی منظوری ضروری ہوگی۔ منظوری کے بعد ہی اشتہار شائع کیا جائے گا۔" data-en="Listings will require admin review and will be published only after approval.">اشتہار کی تفصیلات جمع کرانے کے بعد ایڈمن کی منظوری ضروری ہوگی۔ منظوری کے بعد ہی اشتہار شائع کیا جائے گا۔</p>
-        <span class="button" style="display:inline-block;opacity:.8;cursor:default" data-ur="جلد دستیاب ہوگا" data-en="Coming soon">جلد دستیاب ہوگا</span>
-      </div>
-    </section>
+<a class="card orange" href="#hotels">
+  <span class="icon">🏨</span>
+  <span>ہوٹلز اور رہائش</span>
+</a>
 
-    <section class="soft" id="live">
-      <div class="section-head">
-        <span class="kicker" data-ur="براہِ راست" data-en="LIVE">براہِ راست</span>
-        <h2 data-ur="لائیو تقریبات اور نشریات" data-en="Live Events & Broadcasts">لائیو تقریبات اور نشریات</h2>
-        <p data-ur="وادیٔ سون کے پروگراموں اور تقریبات سے جڑے رہیے۔" data-en="Stay connected with programs and events across Soon Valley.">وادیٔ سون کے پروگراموں اور تقریبات سے جڑے رہیے۔</p>
-      </div>
-      <div class="notice">
-        <h3 data-ur="وادیٔ سون کی لائیو کوریج" data-en="Live coverage from Soon Valley">وادیٔ سون کی لائیو کوریج</h3>
-        <p data-ur="ایڈمن اور ایڈمن سے منظور شدہ منتظمین لائیو نشریات شروع کر سکیں گے۔" data-en="Live broadcasts can be started by the admin and organizers approved by the admin.">ایڈمن اور ایڈمن سے منظور شدہ منتظمین لائیو نشریات شروع کر سکیں گے۔</p>
-        <span class="button" style="display:inline-block;opacity:.8;cursor:default" data-ur="جلد دستیاب ہوگا" data-en="Coming soon">جلد دستیاب ہوگا</span>
-      </div>
-    </section>
+<a class="card purple" href="#tourism">
+  <span class="icon">📸</span>
+  <span>سیاحت اور مقامات</span>
+</a>
 
-    <section id="news">
-      <div class="section-head">
-        <span class="kicker" data-ur="باخبر رہیے" data-en="STAY INFORMED">باخبر رہیے</span>
-        <h2 data-ur="تازہ خبریں اور اعلانات" data-en="Latest News & Announcements">تازہ خبریں اور اعلانات</h2>
-        <p data-ur="مقامی خبریں، اہم اعلانات اور کمیونٹی اپ ڈیٹس۔" data-en="Local news, important announcements and community updates.">مقامی خبریں، اہم اعلانات اور کمیونٹی اپ ڈیٹس۔</p>
-      </div>
-      <div class="news-placeholder" data-ur="خبریں اور اعلانات ایڈمن پینل سے شامل کیے جائیں گے۔" data-en="News and announcements will be added through the admin panel.">خبریں اور اعلانات ایڈمن پینل سے شامل کیے جائیں گے۔</div>
-    </section>
-  </main>
+<a class="card teal" href="#shopping">
+  <span class="icon">🛒</span>
+  <span>آن لائن خرید و فروخت</span>
+</a>
 
-  <footer>
-    <strong>Mardwal Soon Valley</strong>
-    <p>مردوال سون ویلی</p>
-    <p data-ur="وادیٔ سون کی خوبصورتی، ثقافت اور لوگوں کے نام" data-en="Celebrating the beauty, culture and people of Soon Valley">وادیٔ سون کی خوبصورتی، ثقافت اور لوگوں کے نام</p>
-    <div class="copyright">© <span id="year"></span> Mardwal Soon Valley</div>
-  </footer>
+<a class="card navy" href="#sports">
+  <span class="icon">🏏</span>
+  <span>کھیل اور تفریح</span>
+</a>
 
-  <script>
-    let isEnglish = false;
-    function changeLang(){
-      isEnglish = !isEnglish;
-      document.documentElement.lang = isEnglish ? "en" : "ur";
-      document.documentElement.dir = isEnglish ? "ltr" : "rtl";
-      document.body.classList.toggle("english", isEnglish);
-      document.querySelectorAll("[data-ur][data-en]").forEach(function(el){
-        el.textContent = isEnglish ? el.getAttribute("data-en") : el.getAttribute("data-ur");
-      });
-      document.querySelector(".language").textContent = isEnglish ? "اردو" : "English";
-    }
-    document.getElementById("year").textContent = new Date().getFullYear();
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function(){
-        navigator.serviceWorker.register("./service-worker.js").catch(function(error){
-          console.log("Service worker registration skipped:", error);
-        });
-      });
-    }
-  </script>
+<a class="card red" href="#live">
+  <span class="icon">📺</span>
+  <span>لائیو نشریات</span>
+</a>
+
+<a class="card green" href="#emergency">
+  <span class="icon">🚨</span>
+  <span>ایمرجنسی نمبرز</span>
+</a>
+
+<a class="card pink" href="#people">
+  <span class="icon">👥</span>
+  <span>اہم شخصیات</span>
+</a>
+
+<a class="card navy" href="#events">
+  <span class="icon">📅</span>
+  <span>تقریبات و معلومات</span>
+</a>
+
+<a class="card green" href="#agriculture">
+  <span class="icon">🚜</span>
+  <span>زراعت و کاشتکاری</span>
+</a>
+
+<a class="card orange" href="#weather">
+  <span class="icon">🌤️</span>
+  <span>موسم کی معلومات</span>
+</a>
+
+<a class="card green" href="#market">
+  <span class="icon">🏪</span>
+  <span>خرید و فروخت مارکیٹ</span>
+</a>
+
+<a class="card blue" href="#business">
+  <span class="icon">💼</span>
+  <span>کاروباری ڈائریکٹری</span>
+</a>
+
+<a class="card green" href="#area">
+  <span class="icon">📍</span>
+  <span>علاقائی معلومات</span>
+</a>
+
+</main>
+
+<div class="empty" id="empty">
+  کوئی نتیجہ نہیں ملا۔
+</div>
+
+<nav class="bottom-nav">
+  <a class="active" href="#">
+    <span class="nav-icon">🏠</span>ہوم
+  </a>
+  <a href="#search" onclick="document.getElementById('search').focus()">
+    <span class="nav-icon">🔍</span>تلاش
+  </a>
+  <a href="#live">
+    <span class="nav-icon">▶️</span>لائیو
+  </a>
+  <a href="#profile">
+    <span class="nav-icon">👤</span>پروفائل
+  </a>
+  <a href="#more">
+    <span class="nav-icon">•••</span>مزید
+  </a>
+</nav>
+
+</div>
+
+<script>
+const search = document.getElementById('search');
+const cards = document.querySelectorAll('.card');
+const empty = document.getElementById('empty');
+
+search.addEventListener('input', function() {
+  let query = this.value.trim();
+  let count = 0;
+
+  cards.forEach(card => {
+    let match = card.innerText.includes(query);
+    card.style.display = match ? 'flex' : 'none';
+    if(match) count++;
+  });
+
+  empty.style.display = count === 0 ? 'block' : 'none';
+});
+
+document.querySelectorAll('.bottom-nav a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.bottom-nav a')
+      .forEach(a => a.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+
 </body>
 </html>
